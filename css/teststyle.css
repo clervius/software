@@ -1,0 +1,674 @@
+/* ===== Primary Styles ========================================================
+   Author: Joram Clervius
+   ========================================================================== */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0;padding:0;} table {border-collapse:collapse;border-spacing:0;} fieldset,img { border:0; } address,caption,cite,code,dfn,em,strong,th,var { font-style:normal; font-weight:normal; } ol,ul { list-style:none; } caption,th { text-align:left;} h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:normal;} q:before,q:after { content:'';} abbr,acronym { border:0;} body {list-style:none;} iframe {background:none;} a {text-decoration:none;}article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block;}audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}audio:not([controls]){display:none;}
+::selection {
+	background-color:#8f061e;
+	color:white;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+a {transition: all 0.3s ease;}
+.seperator {
+	height:1px;
+	border-bottom:1px solid rgba(0,0,0,.15);
+	margin:10px auto;
+	clear:both;
+	width:90%;
+}
+.smHead {
+	display:block;
+	height:37px;
+	clear:both;
+	background-image:
+    linear-gradient(
+      white 40%,  
+      #ededed ,
+      #ccc
+    );
+}
+.smHead .smHeaderLogo {
+	background-image: url(../img/logo.png);
+	background-repeat: no-repeat;
+	color:transparent;
+	width:53px;height:18px;
+	float:left;
+	margin:8px 0 0 45px;
+}
+.smHead .smHeader {
+	float:right;
+}
+.smHead .smHeader .smUserchild {
+	float:right;
+}
+.smHeaderMenu {}
+.smHeaderMenu li {
+	padding:0 15px;
+}
+.smHeaderMenu li a {
+	text-align: center;
+	color:rgba(0,0,0,.3);
+	font-size:12px;
+	position:relative;
+	top:3px;
+	text-decoration:none;
+}
+.smHeaderMenu li a:hover {
+	color:rgba(0,0,0,.6);
+}
+.smHeaderMenu li a i {
+	display:block;
+}
+.smHead .smHeader .smUser {
+	border-left:1px solid rgba(0,0,0,.05);
+	padding-left:15px;
+	height:37px;
+	position:relative;
+}
+.smHead .smHeader .smUser .smUserName {
+	text-align: right;
+	display:inline-block;
+}
+.smHead .smHeader .smUser .smUserName li {
+	height:14px;
+}
+.smHead .smHeader .smUser .smUserName li a {
+	color:black;
+}
+.smHead .smHeader .smUser .smUserName li a:hover {
+	text-decoration:none;
+}
+.smHead .smHeader .smUser .smUserName li:first-child a {
+	font-size:9pt;
+	font-weight:400;
+}
+.smHead .smHeader .smUser .smUserName li:last-child a {
+	font-size:8.5pt;
+	font-weight:100;
+}
+.smHead .smHeader .smUser .smUserName li:last-child a:hover {
+	font-weight:300;
+}
+.smHead .smHeader .smUser .smUserImg {
+	display:inline-block;
+	border-radius:50%;
+	overflow:hidden;
+	width:30px;
+	height:30px;
+	margin:0 15px 0 5px;
+	position:relative;
+	top:3px;
+}
+.smHead .smHeader .smUser .smUserImg img {
+	width:100%;
+}
+.smHead .smHeader .smUser .smUserDD {	
+	position:absolute;
+	padding:10px;
+	width:160px;
+	top:37px;
+	left:-10px;
+	background-color: #fff;
+}
+.smHead .smHeader .smUser .smUserDD ul:first-child {
+	border-bottom:1px solid #a3c1c9;
+	padding-bottom:3px;
+}
+.smHead .smHeader .smUser .smUserDD li {
+	margin-bottom:5px;
+}
+.smHead .smHeader .smUser .smUserDD li a {
+
+	color:#b0b0b0;
+}
+.smHead .smHeader .smUser .smUserDD li a:hover {
+	text-decoration:none;
+	color:#000;
+}
+.smHead .smHeader .smUser .smUserDD li a i {
+	margin-right:5px;
+}
+.smNavigation {
+	background-color: #001325;
+	width:150px;
+	height:calc(100% - 37px);
+	position:absolute;
+	top:37px;left:0px;
+	z-index:9999;
+}
+.smNavigation .smNavTaxType {
+	border-bottom:1px solid #a3c1c9;
+	padding-left:20px;
+	font-size:12px;
+	color:#a3c1c9;
+}
+.smNavigation .smNavTaxType .taxType {
+	display:block;
+	padding:10px 0;
+}
+.smNavigation .smNavTaxType .taxType:hover, .smNavigation .smNavTaxType .choosetaxType li a:hover {
+	cursor: pointer;
+	color:white;
+	text-decoration:none;
+}
+.smNavigation .smNavTaxType .choosetaxType {
+	width:220px;
+	background-color: #001325;
+	padding:10px 0;
+	display:none;
+}
+.smNavigation .smNavTaxType .choosetaxType li {
+	display:inline-block;
+	margin-right:15px;
+}
+.smNavigation .smNavTaxType .choosetaxType li a {
+	color:#a3c1c9;
+}
+.smNavigation .smNavType {}
+.smNavigation .smBodyNav {
+	display:block;
+	margin:20px 0 0 20px;
+
+}
+.smNavigation .smBodyNav li {
+	font-size:12px;
+	font-weight:400;
+	margin-bottom:10px;
+}
+.smNavigation .smBodyNav li a {
+	color:white;
+	text-decoration: none;
+}
+.smNavigation .smBodyNav li a:hover {
+	opacity:.6;
+}
+.smNavigation .smBodyNav li a i {
+	margin-right:10px;
+}
+#smBody {
+	height:calc(100% - 37px);
+	overflow-x:auto;
+	overflow-y:hidden;
+}
+.smBody {
+	height:100%;
+	width:calc(100% + 50px);
+}
+.dashWindow {
+	margin-left:200px;
+}
+.dashWindow .dashboardContainer {
+	margin-top:50px;
+}
+.dashWindow .dashboardContainer header {
+	border-bottom:1px solid rgba(0,0,0,.1);
+	padding:15px 0 15px 15px;
+}
+.dashWindow .dashboardContainer header h3 {
+	font-size:16px;
+	font-weight:100;
+
+}
+.dashWindow .dashboardContainer header h3 small {
+	display:block;
+	margin-top:3px;
+	font-weight:100;
+}
+.dashWindow .dashboardContainer .dashLongLeft {
+	float:left;
+	width:147px;
+}
+#dashRecentItems {}
+#dashRecentItems ul {
+	display:block;
+}
+#dashRecentItems ul li {
+	border-bottom:1px solid rgba(0,0,0,.07);
+	padding:5px 0 5px 15px;
+}
+#dashRecentItems ul li a {
+	text-decoration: none;
+	font-size:13px;
+	color:black;
+	font-weight:100;
+}
+#dashRecentItems ul li a:hover {
+	opacity:.5;
+}
+.dashWindow .dashboardContainer .dashBody {
+	float:left;
+	margin-left:10px;
+}
+.dashBody {
+	width:274px;
+}
+.dashBody #dashSearch {
+	padding:15px;
+	width:100%;
+}
+.dashBody form {}
+.dashBody form input {}
+.dashBody form input[type="search"] {
+	width:100%;
+	border:none;
+	background-color:rgba(0,0,0,.06);
+	outline: none !important;	
+	font-family: FontAwesome, "proxima-nova", "Montserrat", sans-serif;
+}
+.dashBody form input[type="search"]:focus, #newTaxStart form input:focus {
+	background-color: #001325 !important;
+	color:white;
+}
+.dashBody form input[type="search"]:hover, #newTaxStart form input:hover {
+	background-color:rgba(0,0,0,.09);
+}
+.dashBody form input[type="submit"] {
+	display:none;
+}
+#dashInformation {
+	margin:10px 0;
+}
+#dashInformation ul {
+	display:block;
+}
+#dashInformation ul li {
+	display:inline-block;
+	text-align:center;
+	width:49%;
+}
+#dashInformation ul li:first-child {
+	border-right:1px solid rgba(0,0,0,.2);
+}
+#dashInformation ul li span {
+	display:block;
+
+}
+#dashInformation ul li .dashInfoNumber {
+	font-size:24px;
+	font-weight:600;
+}
+#dashInformation ul li .dashInfoTitle {
+	font-weight:400;
+	font-size:12px;
+	margin-top:-3px;
+}
+#dashInformation ul li:first-child .dashInfoTitle {
+	color:#8f061e;
+}
+#dashInformation ul li:last-child .dashInfoTitle {
+	color:#a3c1c9;
+}
+#dashNews {}
+#dashNews ul {
+	padding:10px 0 5px;
+}
+#dashNews ul li {
+	font-size:9px;
+	font-weight:100;
+	padding-left:15px;
+	margin-bottom:3px;
+}
+#dashNews ul li a {}
+#dashNews ul li a:before {
+	content: "*";
+	margin-right:3px;
+
+}
+.dashButtons {
+	margin-top:10px;
+}
+.dashButtons button {
+	width:48%;
+	border:none;
+	text-align:center;
+	color:white;
+	padding:7px 0 8px;
+	font-weight:300;
+	font-size:12px;
+}
+.dashButtons button:hover {
+	opacity:.8;
+}
+.dashButtons button:first-child {
+	float:left;
+	background-color: #8f061e;
+}
+#newTax {
+	float:right;
+	background-color: #001325;
+}
+.dashButtons button i {
+	display:block;
+}
+#newTaxStart {
+	width:48%;
+	float:right;
+	display:none;
+}
+#newTaxStart form {}
+#newTaxStart form input {
+	width:100%;
+	border:none;
+	padding:3px 0 3px 10px;
+	font-size:10px;
+	outline:none;
+	background-color: rgba(0,0,0,.1);
+	color:rgba(0,0,0,.3);
+	margin-bottom:4px;
+	font-weight:400;
+	letter-spacing: 1px
+}
+.dashItem {}
+.panelWindow, .panelList, .dashWindow {
+	float:left;
+	display:block;
+}/*
+.panelWindow, .panelList {
+	display:none;
+}*/
+.boxShadow {
+	-moz-box-shadow: 2px 2px 5px 6px #ccc;
+	box-shadow: 1px 1px 4px 1px #e9e9e9;
+}
+.panelWindow {
+	width:750px;
+	margin:0 0 0 50px;
+
+}
+.panelWindow .panelTopBar {
+	background-color: #001325;
+
+	height:21px;
+}
+.ptaxType {
+	color:white;
+	font-size:11px;
+	padding:3px 0 0 15px;
+	float:left;
+	position:relative;
+}
+.ptaxType:hover {
+	cursor:pointer;
+	
+}
+.ptaxType:hover .pcurType {
+	opacity:.8;
+}
+.ptaxType .pcurType {}
+.ptaxType .ptaxTypes {
+	position:absolute;
+	top:21px;
+	z-index: 900;
+	padding:10px 15px 0 10px;
+	border:1px solid #8f061e;
+	background-color:white;
+	color:rgba(0,0,0,.3);
+	display:none;
+}
+.ptaxType .ptaxTypes li {
+	margin-bottom: 5px;
+	border-bottom:1px solid rgba(0,0,0,.2);
+	padding-bottom:3px;
+	font-weight:500;
+}
+.ptaxType .ptaxTypes li:hover {
+	color:black;
+}
+.ptaxType .ptaxTypes li:last-child {
+	border-bottom:none;
+}
+.panelWindow .panelTopBar .panelHeaderContent {
+	font-size:11px;
+	float:left;
+	padding:3px 0 0 15px;
+	display:none;
+}
+.panelWindow .panelTopBar .panelHeaderContent span:first-child {
+	color:white;
+}
+.panelWindow .panelTopBar .panelHeaderContent span:last-child {
+	margin-left:10px;
+}
+.panelWindow .panelTopBar .panelHeaderContent span {
+	
+}
+.panelWindow .panelTopBar .panelOperators {
+	list-style: none;
+	float:right;
+	position:relative;
+	
+}
+.panelWindow .panelTopBar .panelOperators li {
+	text-align: center;
+	width:35px;
+	display:inline-block;
+	padding:4px 0px;
+	font-size:12px;
+	color:rgba(255,255,255,.5);
+}
+.panelClose {
+	background-color: #8f061e;
+}
+.panelClose i {
+	color:white;
+}
+.panelWindow .panelTopBar .panelOperators li i {}
+.panelWindow .panelTopBar .panelOperators li:hover {
+	cursor:pointer;
+	opacity:.7;
+}
+.panelHeader {
+	background-color: #001325;
+	padding:5px 0 10px 15px;
+	height:140px;
+
+}
+.panelHeader nav {}
+.panelHeader nav ul {
+	display:block;
+	position:relative;
+	top:20px;
+}
+.panelHeader nav ul li {
+	
+	text-align:center;
+	display:inline-block;
+}
+.panelHeader nav ul li a {
+	transition: all 0.3s ease;
+	background-color: rgba(255,255,255,.05);
+	padding:10px 10px 5px;
+	display:block;
+	border:2px solid rgba(255,255,255,.05);
+}
+.panelHeader nav ul li a:hover {
+	color:white;
+	text-decoration: none;
+	background-color: rgba(255,255,255,.09);
+	border-right:2px solid rgba(255,255,255,.1);
+	border-bottom:2px solid rgba(255,255,255,.1);
+}
+.panelHeader nav ul li i {
+	display:block;
+	margin-bottom:3px;
+}
+.panelHeader .phRefundAmt {
+	margin-left:20px;
+	text-align:left;
+	position:relative;
+	top:1px;
+	opacity:.9;
+}
+.panelHeader .phRefundAmt span {
+	display:block;
+	font-weight:300;
+	color:rgba(255,255,255,1);
+	font-size:14px;
+	font-weight:100;
+	letter-spacing: 1.5px;
+}
+.panelHeader .phRefundAmt span:last-child {
+	padding-top:1px;
+	border-top:1px dashed rgba(255,255,255,.3);
+}
+.panelHeader .phRefundAmt span strong {
+	width:50px;
+	display:inline-block;
+	margin-right:5px;
+	letter-spacing: .5px;
+}
+.pBodyNav {
+	border-bottom:1px solid rgba(0,0,0,.08);
+	padding:8px 0 8px 15px;
+}
+.pBodyNav {
+	display:block;
+}
+.pBodyNav  li {
+	display:inline-block;
+	margin-right:15px;
+}
+.pBodyNav li a {
+	color:rgba(0,0,0,.4);
+	padding:3px 5px;
+	border-radius:5px;
+}
+.pBodyNav li a:hover {
+	cursor:pointer;
+}
+.pBodyNav li.active a {
+	background-color:#001325;
+	color:white;
+	
+}
+.pBodyNav li.active a:hover {
+	color:white;
+}
+.pBodyNav li a:hover {
+	color:rgba(0,0,0,.8);
+	text-decoration:none;
+}
+.pBodyWrapper {}
+.pBodyWrapper .smBodyTab {
+	margin-top:15px;
+}
+.panelList {
+	margin-left:20px;
+	padding-top:170px;
+}
+.panelList h3 {
+	font-size:20px;
+	color:rgba(0,0,0,.7);
+	margin-bottom:20px;
+}
+.panelList nav {}
+.panelList nav ul {}
+.panelList nav ul li {
+	margin-bottom:3px;
+}
+.panelList nav ul li a {
+	color:#a3c1c9;
+}
+.panelList nav ul li a:hover {
+	text-decoration:none;
+	font-weight:300;
+	color:#163038;
+}
+.pBodyWrapper {
+	padding:0 15px 0 15px;
+	height:calc(100% - 47px );
+	overflow:auto;
+}
+.pBodyWrapper {
+	font-size:12px;
+	font-weight:300;
+}
+.pBodyWrapper h4 {
+	margin-bottom:10px;
+	font-size:16px;
+}
+.pBodyWrapper h5 {
+	display:block;
+	margin-bottom:10px;
+	font-size:14px;
+	
+}
+.pBodyWrapper .panelCard {
+	background-color:rgba(0,0,0,.01);
+	border-radius:3px;
+	border:1px solid;
+	border-top-color:rgba(0,0,0,.03);
+	border-left-color:rgba(0,0,0,.03);
+	border-right-color:rgba(0,0,0,.08);
+	border-bottom-color:rgba(0,0,0,.08);
+	padding:10px;
+	font-weight:200;
+	margin-bottom:10px;
+
+}
+.pBodyWrapper input, .pBodyWrapper select {
+	border:none;
+	outline:none;
+	background-color:rgba(0,0,0,.08);
+	padding:3px 5px;
+	font-size:12px;
+	color:black;
+}
+.pBodyWrapper input:hover {}
+.pBodyWrapper input:focus {
+	background-color:#f6f5c1;
+}
+.pBodyWrapper ul.panelTabs {
+	margin-bottom:10px;
+}
+.pBodyWrapper ul.panelTabs li {
+	display:inline-block;
+	margin-right:10px;
+}
+.pBodyWrapper ul.panelTabs li a {
+	color:rgba(0,0,0,.5);
+	font-weight:400;
+	border-radius:3px;
+	text-decoration: none;
+	padding:3px 5px;
+}
+.pBodyWrapper ul.panelTabs li a:hover {
+	cursor:pointer;
+}
+.pBodyWrapper ul.panelTabs li.active a {
+	background-color:rgba(0,0,0,.7) ;
+	color:white;
+}
+.formGroup, .formGroup.stackedInputs {
+	margin:3px 0 !important;
+}
+
+.formGroup label {
+	padding-top:4px;
+	text-align:right;
+}
+.panelCard .formGroup {
+	margin:0;
+}
+.panelCard .formGroup label {
+	text-align:right !important;
+	padding-top:3px;
+}
+.formGroup label input {
+	width:100%;
+}
+.stackedInputs {}
+.stackedInputs input, .stackedInputs select {
+	border-right:1px solid rgba(0,0,0,.2);
+}
+.stackedInputs input:last-child {
+	border:none;
+}
+.panelRow {
+	margin-bottom:30px;
+}
+.ssnText {
+	letter-spacing: 2px;
+
+}
