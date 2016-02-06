@@ -193,7 +193,8 @@ a {transition: all 0.3s ease;}
 }
 .smBody {
 	height:100%;
-	width:calc(100% + 50px);
+	overflow:hidden;
+	width:calc(100% + 850px);
 }
 .dashWindow {
 	margin-left:200px;
@@ -591,10 +592,14 @@ a {transition: all 0.3s ease;}
 .pBodyWrapper h5 {
 	display:block;
 	margin-bottom:10px;
+	padding:5px 0 7px 10px;
 	font-size:14px;
-	
+	border-bottom:1px solid rgba(0,0,0,.1);
+	transition: all 0.7s ease;
 }
+
 .pBodyWrapper .panelCard {
+	transition: all 0.7s ease;
 	background-color:rgba(0,0,0,.01);
 	border-radius:3px;
 	border:1px solid;
@@ -606,6 +611,16 @@ a {transition: all 0.3s ease;}
 	font-weight:200;
 	margin-bottom:10px;
 
+}
+.pBodyWrapper .panelCard:hover {
+	border-top-color:rgba(0,0,0,.09);
+	border-left-color:rgba(0,0,0,.09);
+	border-right-color:rgba(0,0,0,.2);
+	border-bottom-color:rgba(0,0,0,.2);
+}
+.pBodyWrapper .panelCard:hover h5 {
+	background-color: rgba(0,0,0,.02);
+	color:black;
 }
 .pBodyWrapper input, .pBodyWrapper select {
 	border:none;
@@ -637,19 +652,21 @@ a {transition: all 0.3s ease;}
 	cursor:pointer;
 }
 .pBodyWrapper ul.panelTabs li.active a {
-	background-color:rgba(0,0,0,.7) ;
+	background-color:#001325;
 	color:white;
 }
 .formGroup, .formGroup.stackedInputs {
 	margin:3px 0 !important;
 }
-
 .formGroup label {
 	padding-top:4px;
 	text-align:right;
 }
 .panelCard .formGroup {
 	margin:0;
+}
+.formGroup input[type="checkbox"]:hover, .formGroup input[type="radio"]:hover {
+	cursor:pointer;
 }
 .panelCard .formGroup label {
 	text-align:right !important;
@@ -670,5 +687,20 @@ a {transition: all 0.3s ease;}
 }
 .ssnText {
 	letter-spacing: 2px;
-
+}
+.dependentsPanel input, .dependentsPanel select {
+	border-bottom:1px solid transparent;
+}
+.dependentsPanel .ssnText {
+	letter-spacing: 1px;
+}
+.dependentsPanel .stackedInputs input:last-child, .dependentsPanel .stackedInputs select:last-child {
+	border-right:1px solid rgba(0,0,0,.2) !important;
+	border-bottom:1px solid transparent;
+}
+.dependentsPanel .col-md-1, .dependentsPanel .col-md-2, .dependentsPanel .col-md-3, .dependentsPanel .col-md-4, .dependentsPanel .col-md-5, .dependentsPanel .col-md-6, .dependentsPanel .col-md-7, .dependentsPanel .col-md-8, .dependentsPanel .col-md-9, .dependentsPanel .col-md-10, .dependentsPanel .col-md-11, .dependentsPanel .col-md-12 {
+	padding:0 !important;
+}
+.forSpouse, .forSpouse_ {
+	opacity: .3;
 }

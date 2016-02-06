@@ -33,8 +33,9 @@ $(document).on('click', '.ptaxTypes li', function(){
 		
 		
 
-		console.log("The containerHeight is "+containerHeight+" and the header height is "+header+" - and the topBar Height is " +topBar);
+		console.log("The containerHeight is "+containerHeight+" and the header height is "+header+" - and the topBar Height is" +topBar);
 		// panelBody.animate({height: containerHeight - header - topBar - 21}, 70);
+		//$('.smBody').height($('.smBody').height() - 5)
 		panelBody.height(containerHeight - header - topBar - 18);
 		
 		 $('.pBodyWrapper').mCustomScrollbar({theme: "minimal-dark", scrollInertia: 250, callbacks:{
@@ -49,7 +50,7 @@ $(document).on('click', '.ptaxTypes li', function(){
 		 }})
 	}	
 
-	// Function to toggle showing the Forms
+	// Function to toggle showing the Forms and schedules
 	$(document).on('click', '.panelFormS', function(){
 		var panelWindow = $(this).parents('section.panelWindow');
 		//var listItems = panelWindow.next('.panelList');
@@ -128,8 +129,23 @@ $(document).on('click', '.ptaxTypes li', function(){
 	})
 /* End of the top header functions */
 
-
-
+// UX function - make the empty inputs gray, filled ones white, and focused ones dark.
+$(document).on('blur', '.pBodyWrapper input, .pBodyWrapper select', function(){
+	console.log("you left that input")
+	if( $(this).val() === '' ) {
+		$(this).css('background-color', 'rgba(0,0,0,.08)');
+		$(this).css('border-bottom','none')
+	}else {
+		$(this).css('background-color', 'transparent');
+		$(this).css('border-bottom','1px solid rgba(0,0,0,.2)')
+		$(this).css('color', 'black')
+	}
+});
+$(document).on('focus', '.pBodyWrapper input, .pBodyWrapper select', function(){
+	$(this).css('background-color', '#001325');
+	$(this).css('color', 'white');
+	$(this).attr('autocomplete', 'off')
+})
 
 
 
@@ -144,6 +160,12 @@ $(document).ready(function(){
 		yearRange: "-100:+0"
 		});
 	})
+	$('.spouseInput, .spouseInput_').prop('disabled', true)
+})
+$('.pBodyWrapper').hover(function(){
+	$('#smBody').mCustomScrollbar('disable')
+},function(){
+	$('#smBody').mCustomScrollbar("update")
 })
 $(window).resize(function(){
 	panelBodyHeight();

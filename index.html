@@ -1,6 +1,8 @@
+
 <html>
 
 	<head>
+		<meta charset="UTF-8">
 		<title>Software Test</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -158,10 +160,10 @@
 						</ul>
 					</div>
 					<div class="panelHeaderContent text-white">
-						<span>New Taxpayer</span>
+						<span class="tpNamepart">New Taxpayer</span>
 						<span class="text-lightBlue text-light">
 													<span class="pSSN">591-77-5063</span> &nbsp;&nbsp;&nbsp; 
-													HOH  &nbsp;&nbsp;&nbsp;
+													<span class="headStatus">HOH</span>  &nbsp;&nbsp;&nbsp;
 							<strong>AGI:</strong> 	$10,000&nbsp;&nbsp;&nbsp;
 							<strong>Fed:</strong> 	$8,345.00&nbsp;&nbsp;&nbsp;
 							<strong>State:</strong> $3,500.00
@@ -177,10 +179,10 @@
 				</div>
 				<div class="panelHeader">
 					<h2 class="text-white text-light">
-						New Taxpayer
+						<span class="tpNamepart">New Taxpayer</span>
 						<small class="text-lightBlue text-light">
 							<span class="pSSN">591-77-5063</span>
-							<span>HOH</span>	
+							<span class="headStatus">HOH</span>	
 							<span title="AGI"><strong>AGI:</strong>  $ 10,000.00</span>					
 						</small>
 					</h2>
@@ -229,55 +231,74 @@
 					<div class="pBodyWrapper">				
 						<div  class="tab-content">
 							<div  class="tab-pane active fade in smBodyTab" id="smClientInfo">
-								<form>
+								<form >
 									<div class="row">
 										
-										<div class="col-md-12 panelRow">
-											<h4 class="col-md-6">Taxpayer Information
-												<small></small>
-											</h4>
-											<h4 class="col-md-6">Spouse Information
-												<small></small>
-											</h4>
+										<div class="col-md-12 panelRow">											
+											
 											<div >
 												<div class="col-md-6">
+
 													<div class="panelCard">
+														<h5>Taxpayer Information</h5>
 														<div class="formGroup clearfix">
 															<label class="col-md-3">SSN:</label>
-															<input class="col-md-9 ssnText" type="text" placeholder="SSN" id="tpSSN" name="" title="Social Security Number">
+															<input class="col-md-9 ssnText" type="text" placeholder="SSN" id="tpSSN" name="" title="Social Security Number"  >
 														</div>
 
 														<div class="formGroup clearfix stackedInputs">
 															<label class="col-md-3">Name:</label>
-															<input class="col-md-3" type="text" placeholder="First Name" id="tpFname" name=""  title="First Name">
-															<input class="col-md-2" type="text" placeholder="MI." id="tpMI" name=""  title="Middle Initial">
-															<input class="col-md-4" type="text" placeholder="Last Name" id="tpLname" name=""  title="Last Name">
+															<input class="col-md-4" type="text" placeholder="First Name" id="tpFname" name=""  title="First Name"  >
+															<input class="col-md-1" type="text" placeholder="MI." id="tpMI" name=""  title="Middle Initial"  >
+															<input class="col-md-4" type="text" placeholder="Last Name" id="tpLname" name=""  title="Last Name"  >
 														</div>
 														
 														<div class="formGroup clearfix">
 															<label class="col-md-3">DOB:</label>
-															<input class="col-md-3 dobInput" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" id="tpDOB" name="" title="Date of Birth">
+															<input class="col-md-3 dobInput" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" id="tpDOB" name="" title="Date of Birth"  >
 															<label class="col-md-3">DOD:</label>
-															<input class="col-md-3 dobInput" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" id="tpDOD" name=""  title="Date of Death">
+															<input class="col-md-3 dobInput" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" id="tpDOD" name=""  title="Date of Death"  >
+														</div>
+
+													</div>
+													<!--
+													<div class="panelCard">
+														<h5>DL or State ID</h5>
+														<div class="formGroup clearfix">
+															<label class="col-md-3">ID #:</label>
+															<input class="col-md-5" type="text" placeholder="ID Number" id="tpidNumber" name="" title="State ID Number"  >
+															<label class="col-md-3">State:</label>
+															<input class="col-md-1" type="text" placeholder="St" id="tpidNumber" name="" title="State ID Number"  >
+														</div>
+														<div class="formGroup clearfix">
+															<label class="col-md-3">Issue:</label>
+															<input class="col-md-3 dobInput" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" id="tpIdIssue" name="" title=""  >
+															<label class="col-md-3">EXP:</label>
+															<input class="col-md-3 dobInput" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" id="tpIdEXP" name=""  title=""  >
 														</div>
 													</div>
-
+													-->
 													<div class="formGroup clearfix">
 														<label class="col-md-4">Occupation:</label>
-														<input class="col-md-8" type="text" placeholder="Occupation" id="tpOccupation" name=""  title="Occupation" >
+														<input class="col-md-8" type="text" placeholder="Occupation" id="tpOccupation" name=""  title="Occupation"  >
 													</div>
 
 													<div class="panelCard">
 														<div class="formGroup clearfix">
 															<label class="col-md-3">Email:</label>
-															<input class="col-md-9" type="email" placeholder="Email Address" id="tpEmail" name=""  title="Valid Email Address">
+															<input class="col-md-9" type="email" placeholder="Email Address" id="tpEmail" name=""  title="Valid Email Address"  >
 														</div>
 										
 														<div class="formGroup clearfix">
-															<label class="col-md-3">Home:</label>
-															<input class="col-md-3" type="text" placeholder="Phone" id="tphPhone" name=""  title="Home Phone Number">
-															<label class="col-md-3">Cell:</label>
-															<input class="col-md-3" type="text" placeholder="Cell Phone" id="tpcPhone" name=""  title="Cell Phone Number">
+															<label class="col-md-3">Phone:</label>
+															<input class="col-md-4" type="text" placeholder="Phone" id="tphPhone" name=""  title="Home Phone Number"  >
+															<label class="col-md-2">Cell:</label>
+															<input class="col-md-3" type="text" placeholder="Phone" id="tpcPhone" name=""  title="Cell Phone Number"  >
+														</div>
+														<div class='seperator'></div>
+														<div class="formGroup clearfix">
+															<label class="col-md-11">Okay to text?</label>
+															<input class="col-md-1" type="checkbox" id="tpSMS?" title="allow texting" checked="checked">
 														</div>
 													</div>
 													<div class="panelCard">
@@ -286,42 +307,46 @@
 															<li role="presentation" class="active"><a data-target="#tpDomAddress" role="tab" data-toggle="tab" >Domestic</a></li>
 															<li role="presentation" ><a data-target="#tpFoAddress" role="tab" data-toggle="tab" >Foreign</a></li>
 														</ul>
+														<div class="formGroup clearfix">
+															<label class="col-md-3">Care/of:</label>
+															<input type="text" class="col-md-9" placeholder="Care/of" title="Care of">
+														</div>
 														<div class="tab-content">
 															<div id="tpDomAddress" class="tab-pane active fade in">
 																<div class="formGroup clearfix">
 																	<label class="col-md-3">Address:</label>
-																	<input class="col-md-9" type="text" placeholder="Street Address" id="tpSAddress" name=""  title="Street Address">
+																	<input class="col-md-9" type="text" placeholder="Street Address" id="tpSAddress" name=""  title="Street Address"  >
 																</div>
 																<div class="formGroup clearfix stackedInputs">
 																	<label class="col-md-3"></label>
-																	<input class="col-md-3" type="text" placeholder="City" id="tpCity" name=""  title="City">
-																	<input class="col-md-2" type="text" placeholder="State" id="tpState" name="" title="State (Abbr.)">
-																	<input class="col-md-4" type="text" placeholder="Zip" id="tpZip" name=""  title="Zip Code">
+																	<input class="col-md-4" type="text" placeholder="City" id="tpCity" name=""  title="City"  >
+																	<input class="col-md-2" type="text" placeholder="State" id="tpState" name="" title="State (Abbr.)"  >
+																	<input class="col-md-3" type="text" placeholder="Zip" id="tpZip" name=""  title="Zip Code"  >
 																</div>
 															</div>
 															<div id="tpFoAddress" class="tab-pane fade in">
 																<div class="formGroup clearfix">
 																	<label class="col-md-3">Country</label>
-																	<input class="col-md-9" type="text" placeholder="Country" id="tpSAddress" name=""  title="Street Address">
+																	<input class="col-md-9" type="text" placeholder="Country" id="tpSAddress" name=""  title="Street Address"  >
 																</div>
 																<div class="formGroup clearfix">
 																	<label class="col-md-3">Address:</label>
-																	<input class="col-md-9" type="text" placeholder="Street Address" id="tpSAddress" name=""  title="Street Address">
+																	<input class="col-md-9" type="text" placeholder="Street Address" id="tpSAddress" name=""  title="Street Address"  >
 																</div>
 																<div class="formGroup clearfix stackedInputs">
 																	<label class="col-md-3"></label>
-																	<input class="col-md-3" type="text" placeholder="City" id="tpCity" name=""  title="City">
-																	<input class="col-md-3" type="text" placeholder="Province" id="tpState" name="" title="State (Abbr.)">
-																	<input class="col-md-3" type="text" placeholder="Zip" id="tpZip" name=""  title="Zip Code">
+																	<input class="col-md-3" type="text" placeholder="City" id="tpCity" name=""  title="City"  >
+																	<input class="col-md-3" type="text" placeholder="Province" id="tpState" name="" title="State (Abbr.)"  >
+																	<input class="col-md-3" type="text" placeholder="Zip" id="tpZip" name=""  title="Zip Code"  >
 																</div>																
 															</div>
 														</div>
 														<div class="seperator"></div>
 														<div class="formGroup clearfix">
-															<label class="col-md-5">APO/DPO/FPO</label>
-															<input class="col-md-1" type="checkbox" id="" title="">													
-															<label class="col-md-5">US Citizen</label>
-															<input class="col-md-1" type="checkbox" id="" title="" checked="checked">
+															<label class="col-md-11">APO/DPO/FPO</label>
+															<input class="col-md-1" type="checkbox" id="" title=""  >													
+															<label class="col-md-11">US Citizen/Residency</label>
+															<input class="col-md-1" type="checkbox" id="" title="" checked="checked"  >
 														</div>
 														
 													</div>
@@ -329,8 +354,8 @@
 
 													<div class="formGroup clearfix">
 														<label class="col-md-4">Status:</label>
-														<select class="col-md-8" id="tpMarital" name=""  title="Marital Status">
-															<option> Marital Status</option>
+														<select class="col-md-8" id="tpMarital" name=""  title="Marital Status"  >
+															<option value="-"> Marital Status</option>
 															<option value="S">Single</option>
 															<option value="HOH">Head of Household</option>
 															<option value="MFJ">Married Filing Jointly</option>
@@ -341,71 +366,95 @@
 
 													<div class="formGroup clearfix">
 														<label class="col-md-11">Lived together in 2015</label>
-														<input class="col-md-1" type="checkbox" id="" title="">
+														<input class="col-md-1" type="checkbox" id="" title=""  >
 													</div>
 												</div>
 												<div class="col-md-6">
-													<div class="panelCard">
+													<div class="panelCard forSpouse_">
+														<h5>Spouse Information</h5>
 														<div class="formGroup clearfix">
 															<label class="col-md-3">SSN:</label>
-															<input class="col-md-9 ssnText" type="text" placeholder="SSN" id="tpSSN" name="" title="Social Security Number">
+															<input class="col-md-9 ssnText spouseInput_" type="text" placeholder="SSN" id="tpSSN" name="" title="Social Security Number"  >
 														</div>
 
 														<div class="formGroup clearfix stackedInputs">
 															<label class="col-md-3">Name:</label>
-															<input class="col-md-3" type="text" placeholder="First Name" id="tpFname" name=""  title="First Name">
-															<input class="col-md-2" type="text" placeholder="MI." id="tpMI" name=""  title="Middle Initial">
-															<input class="col-md-4" type="text" placeholder="Last Name" id="tpLname" name=""  title="Last Name">
+															<input class="col-md-4 spouseInput_" type="text" placeholder="First Name" id="tpFname" name=""  title="First Name"  >
+															<input class="col-md-1 spouseInput_" type="text" placeholder="MI." id="tpMI" name=""  title="Middle Initial"  >
+															<input class="col-md-4 spouseInput_" type="text" placeholder="Last Name" id="tpLname" name=""  title="Last Name"  >
 														</div>
 														
 														<div class="formGroup clearfix">
-															<label class="col-md-3">DOB:</label>
-															<input class="col-md-3 dobInput" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" id="tpDOB" name="" title="Date of Birth">
-															<label class="col-md-3">DOD:</label>
-															<input class="col-md-3 dobInput" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" id="tpDOD" name=""  title="Date of Death">
+															<label class="col-md-3 ">DOB:</label>
+															<input class="col-md-3 dobInput spouseInput" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" id="tpDOB" name="" title="Date of Birth"  >
+															<label class="col-md-3 spouseInput">DOD:</label>
+															<input class="col-md-3 dobInput spouseInput" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" id="tpDOD" name=""  title="Date of Death"  >
 														</div>
 
 													</div>
-
-													<div class="formGroup clearfix">
+													<!--
+													<div class="panelCard forSpouse">
+														<h5>DL or State ID</h5>
+														<div class="formGroup clearfix">
+															<label class="col-md-3">ID #:</label>
+															<input class="col-md-5 spouseInput" type="text" placeholder="ID Number" id="tpidNumber" name="" title="State ID Number"  >
+															<label class="col-md-3">State:</label>
+															<input class="col-md-1 spouseInput" type="text" placeholder="St" id="tpidNumber" name="" title="State ID Number"  >
+														</div>
+														<div class="formGroup clearfix">
+															<label class="col-md-3">Issue:</label>
+															<input class="col-md-3 dobInput spouseInput" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" id="tpIdIssue" name="" title=""  >
+															<label class="col-md-3">EXP:</label>
+															<input class="col-md-3 dobInput spouseInput" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" id="tpIdEXP" name=""  title=""  >
+														</div>
+													</div>
+													-->
+													<div class="formGroup clearfix forSpouse">
 														<label class="col-md-4">Occupation:</label>
-														<input class="col-md-8" type="text" placeholder="Occupation" id="tpOccupation" name=""  title="Occupation" >
+														<input class="col-md-8 spouseInput" type="text" placeholder="Occupation" id="tpOccupation" name=""  title="Occupation"  >
 													</div>
 
-													<div class="panelCard">
+													<div class="panelCard forSpouse">
 														<div class="formGroup clearfix">
 															<label class="col-md-3">Email:</label>
-															<input class="col-md-9" type="email" placeholder="Email Address" id="tpEmail" name=""  title="Valid Email Address">
+															<input class="col-md-9 spouseInput" type="email" placeholder="Email Address" id="tpEmail" name=""  title="Valid Email Address"  >
 														</div>
 										
 														<div class="formGroup clearfix">
 															<label class="col-md-3">Home:</label>
-															<input class="col-md-3" type="text" placeholder="Phone" id="tphPhone" name=""  title="Home Phone Number">
+															<input class="col-md-3 spouseInput" type="text" placeholder="Phone" id="tphPhone" name=""  title="Home Phone Number"  >
 															<label class="col-md-3">Cell:</label>
-															<input class="col-md-3" type="text" placeholder="Cell Phone" id="tpcPhone" name=""  title="Cell Phone Number">
+															<input class="col-md-3 spouseInput" type="text" placeholder="Cell Phone" id="tpcPhone" name=""  title="Cell Phone Number"  >
+														</div>
+
+														<div class='seperator'></div>
+														<div class="formGroup clearfix">
+															<label class="col-md-11">Okay to text?</label>
+															<input class="col-md-1 spouseInput" type="checkbox" id="tpSMS?" title="allow texting" checked="checked">
 														</div>
 													</div>
 
-													<h5>Bank Information</h5>
+													
 													<div class="panelCard">
+														<h5>Bank Information</h5>
 														<div class="formGroup clearfix">
 															<label class="col-md-5">Bank Name:</label>
-															<input class="col-md-7" type="text" placeholder="Bank Name" id="tpbankName" name="" title="Bank Name">
+															<input class="col-md-7" type="text" placeholder="Bank Name" id="tpbankName" name="" title="Bank Name"  >
 														</div>
 														<div class="formGroup clearfix">
 															<label class="col-md-5">Routing No.:</label>
-															<input class="col-md-7" type="text" placeholder="Routing Number" id="tprouting" name="" title="Routing">
+															<input class="col-md-7" type="text" placeholder="Routing Number" id="tprouting" name="" title="Routing"  >
 														</div>
 														<div class="formGroup clearfix">
 															<label class="col-md-5">Acct No.:</label>
-															<input class="col-md-7" type="text" placeholder="Account Numbere" id="tpbankName" name="" title="Account Number">
+															<input class="col-md-7" type="text" placeholder="Account Number" id="tpbankName" name="" title="Account Number"  >
 														</div>
 														<div class="seperator"></div>
 														<div class="formGroup clearfix">
 															<label class="col-md-5">Checking</label>
-															<input class="col-md-1" type="radio" id="" title="" name="tpbankType">													
+															<input class="col-md-1" type="radio" id="" title="" name="tpbankType"  >													
 															<label class="col-md-5">Savings</label>
-															<input class="col-md-1" type="radio" id="" title="" name="tpbankType">
+															<input class="col-md-1" type="radio" id="" title="" name="tpbankType"  >
 														</div>
 													</div>
 												</div>
@@ -413,25 +462,55 @@
 											</div>
 										</div>
 										<!-- Dependents -->
-										<div class="col-md-12 panelRow">
-											<h4>Dependents</h4>
+										<div class="col-md-12 panelRow dependentsPanel">											
 											<div class="panelCard">
+												<h5>Dependents</h5>
 												<div class="clearfix">
-													<label class="col-md-2">First Name</label>
-													<label class="col-md-3">Last Name</label>
-													<label class="col-md-1">DOB</label>
-													<label class="col-md-2">SSN</label>
-													<label class="col-md-2">Relationship</label>
-													<label class="col-md-1">Mo</label>
-													<label class="col-md-1" title="(E)ligible, (S)tudent, (D)isabled, (K)idnapped, (N)one" data-toggle="tooltip">Code</label>
+													<div class="col-md-4">
+														<label class="col-md-6">
+															First Name
+														</label>
+														<label class="col-md-6">
+															Last Name
+														</label>
+													</div>
+
+													<div class="col-md-5">
+														<label class="col-md-3">
+															DOB
+														</label>
+														<label class="col-md-4">
+															SSN
+														</label>
+														<label class="col-md-5">
+															Relation
+														</label>
+													</div>
+													<div class="col-md-3">
+														<label class="col-md-2">
+															Mo
+														</label>
+														<label class="col-md-8 text-center">
+															Codes
+														</label>
+														<label class="col-md-2">
+															St
+														</label>
+													</div>
 												</div>
-												<div class="clearfix formGroup stackedInputs">
-													<input class="col-md-2" type="text" placeholder="First Name">
-													<input class="col-md-3" type="text" placeholder="Last Name">
-													<input class="col-md-1" type="text" placeholder="DOB">
-													<input class="col-md-2" type="text" placeholder="SSN">	
-													<select class="col-md-2" id="tpMarital" name=""  title="Relationship">
-															<option value="0" selected="selected">Relationship</option>
+												
+												<!-- Row of dependent -->
+												<div class="formGroup clearfix stackedInputs">
+													<div class="col-md-4">														
+														<input class="col-md-6" type="text" placeholder="First Name"  >
+														<input class="col-md-6" type="text" placeholder="Last Name"  >
+													</div>
+
+													<div class="col-md-5">														
+														<input class="col-md-3 dobInput" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" type="text" >
+														<input class="col-md-4 ssnText" type="text" placeholder="SSN"  >
+														<select class="col-md-5" id="tpMarital" name=""  title="Relationship">
+															<option value="0" selected="selected">Relation</option>
 															<option value="son">Son</option>
 															<option value="daughter">Daughter</option>
 															<option value="stepchild">Stepchild</option>
@@ -451,17 +530,29 @@
 															<option value="uncle">Uncle</option>
 															<option value="none">None</option>
 															<option value="other">Other</option>
-													</select>												
-													<input class="col-md-1" type="text" placeholder="Mo">
-													<input class="col-md-1" title="(E)ligible, (S)tudent, (D)isabled, (K)idnapped, (N)one" data-toggle="tooltip" placeholder="Code">
+														</select>
+													</div>
+													<div class="col-md-3">
+														<input class="col-md-2 text-center" type="text" placeholder="Mo"  >
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text" placeholder="St" >
+													</div>
 												</div>
-												<div class="clearfix formGroup stackedInputs">
-													<input class="col-md-2" type="text" placeholder="First Name">
-													<input class="col-md-3" type="text" placeholder="Last Name">
-													<input class="col-md-1" type="text" placeholder="DOB">
-													<input class="col-md-2" type="text" placeholder="SSN">	
-													<select class="col-md-2" id="tpMarital" name=""  title="Relationship">
-															<option value="0" selected="selected">Relationship</option>
+												<!-- Row of dependent -->
+												<div class="formGroup clearfix stackedInputs">
+													<div class="col-md-4">														
+														<input class="col-md-6" type="text" placeholder="First Name"  >
+														<input class="col-md-6" type="text" placeholder="Last Name"  >
+													</div>
+
+													<div class="col-md-5">														
+														<input class="col-md-3  dobInput" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" type="text">
+														<input class="col-md-4 ssnText" type="text" placeholder="SSN"  >
+														<select class="col-md-5" id="tpMarital" name=""  title="Relationship">
+															<option value="0" selected="selected">Relation</option>
 															<option value="son">Son</option>
 															<option value="daughter">Daughter</option>
 															<option value="stepchild">Stepchild</option>
@@ -481,17 +572,29 @@
 															<option value="uncle">Uncle</option>
 															<option value="none">None</option>
 															<option value="other">Other</option>
-													</select>												
-													<input class="col-md-1" type="text" placeholder="Mo">
-													<input class="col-md-1" title="(E)ligible, (S)tudent, (D)isabled, (K)idnapped, (N)one" data-toggle="tooltip" placeholder="Code">
+														</select>
+													</div>
+													<div class="col-md-3">
+														<input class="col-md-2 text-center" type="text" placeholder="Mo"  >
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text" placeholder="St" >
+													</div>
 												</div>
-												<div class="clearfix formGroup stackedInputs">
-													<input class="col-md-2" type="text" placeholder="First Name">
-													<input class="col-md-3" type="text" placeholder="Last Name">
-													<input class="col-md-1" type="text" placeholder="DOB">
-													<input class="col-md-2" type="text" placeholder="SSN">	
-													<select class="col-md-2" id="tpMarital" name=""  title="Relationship">
-															<option value="0" selected="selected">Relationship</option>
+												<!-- Row of dependent -->
+												<div class="formGroup clearfix stackedInputs">
+													<div class="col-md-4">														
+														<input class="col-md-6" type="text" placeholder="First Name"  >
+														<input class="col-md-6" type="text" placeholder="Last Name"  >
+													</div>
+
+													<div class="col-md-5">														
+														<input class="col-md-3  dobInput" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" type="text">
+														<input class="col-md-4 ssnText" type="text" placeholder="SSN"  >
+														<select class="col-md-5" id="tpMarital" name=""  title="Relationship">
+															<option value="0" selected="selected">Relation</option>
 															<option value="son">Son</option>
 															<option value="daughter">Daughter</option>
 															<option value="stepchild">Stepchild</option>
@@ -511,17 +614,29 @@
 															<option value="uncle">Uncle</option>
 															<option value="none">None</option>
 															<option value="other">Other</option>
-													</select>												
-													<input class="col-md-1" type="text" placeholder="Mo">
-													<input class="col-md-1" title="(E)ligible, (S)tudent, (D)isabled, (K)idnapped, (N)one" data-toggle="tooltip" placeholder="Code">
+														</select>
+													</div>
+													<div class="col-md-3">
+														<input class="col-md-2 text-center" type="text" placeholder="Mo"  >
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text" placeholder="St" >
+													</div>
 												</div>
-												<div class="clearfix formGroup stackedInputs">
-													<input class="col-md-2" type="text" placeholder="First Name">
-													<input class="col-md-3" type="text" placeholder="Last Name">
-													<input class="col-md-1" type="text" placeholder="DOB">
-													<input class="col-md-2" type="text" placeholder="SSN">	
-													<select class="col-md-2" id="tpMarital" name=""  title="Relationship">
-															<option value="0" selected="selected">Relationship</option>
+												<!-- Row of dependent -->
+												<div class="formGroup clearfix stackedInputs">
+													<div class="col-md-4">														
+														<input class="col-md-6" type="text" placeholder="First Name"  >
+														<input class="col-md-6" type="text" placeholder="Last Name"  >
+													</div>
+
+													<div class="col-md-5">														
+														<input class="col-md-3  dobInput" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" type="text" >
+														<input class="col-md-4 ssnText" type="text" placeholder="SSN"  >
+														<select class="col-md-5" id="tpMarital" name=""  title="Relationship">
+															<option value="0" selected="selected">Relation</option>
 															<option value="son">Son</option>
 															<option value="daughter">Daughter</option>
 															<option value="stepchild">Stepchild</option>
@@ -541,17 +656,29 @@
 															<option value="uncle">Uncle</option>
 															<option value="none">None</option>
 															<option value="other">Other</option>
-													</select>												
-													<input class="col-md-1" type="text" placeholder="Mo">
-													<input class="col-md-1" title="(E)ligible, (S)tudent, (D)isabled, (K)idnapped, (N)one" data-toggle="tooltip" placeholder="Code">
+														</select>
+													</div>
+													<div class="col-md-3">
+														<input class="col-md-2 text-center" type="text" placeholder="Mo"  >
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text" placeholder="St" >
+													</div>
 												</div>
-												<div class="clearfix formGroup stackedInputs">
-													<input class="col-md-2" type="text" placeholder="First Name">
-													<input class="col-md-3" type="text" placeholder="Last Name">
-													<input class="col-md-1" type="text" placeholder="DOB">
-													<input class="col-md-2" type="text" placeholder="SSN">	
-													<select class="col-md-2" id="tpMarital" name=""  title="Relationship">
-															<option value="0" selected="selected">Relationship</option>
+												<!-- Row of dependent -->
+												<div class="formGroup clearfix stackedInputs">
+													<div class="col-md-4">														
+														<input class="col-md-6" type="text" placeholder="First Name"  >
+														<input class="col-md-6" type="text" placeholder="Last Name"  >
+													</div>
+
+													<div class="col-md-5">														
+														<input class="col-md-3  dobInput" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" type="text">
+														<input class="col-md-4 ssnText" type="text" placeholder="SSN"  >
+														<select class="col-md-5" id="tpMarital" name=""  title="Relationship">
+															<option value="0" selected="selected">Relation</option>
 															<option value="son">Son</option>
 															<option value="daughter">Daughter</option>
 															<option value="stepchild">Stepchild</option>
@@ -571,11 +698,65 @@
 															<option value="uncle">Uncle</option>
 															<option value="none">None</option>
 															<option value="other">Other</option>
-													</select>												
-													<input class="col-md-1" type="text" placeholder="Mo">
-													<input class="col-md-1" title="(E)ligible, (S)tudent, (D)isabled, (K)idnapped, (N)one" data-toggle="tooltip" placeholder="Code">
+														</select>
+													</div>
+													<div class="col-md-3">
+														<input class="col-md-2 text-center" type="text" placeholder="Mo"  >
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text" placeholder="St" >
+													</div>
 												</div>
+												<!-- Row of dependent -->
+												<div class="formGroup clearfix stackedInputs">
+													<div class="col-md-4">														
+														<input class="col-md-6" type="text" placeholder="First Name"  >
+														<input class="col-md-6" type="text" placeholder="Last Name"  >
+													</div>
+
+													<div class="col-md-5">														
+														<input class="col-md-3  dobInput" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/" type="text">
+														<input class="col-md-4 ssnText" type="text" placeholder="SSN"  >
+														<select class="col-md-5" id="tpMarital" name=""  title="Relationship">
+															<option value="0" selected="selected">Relation</option>
+															<option value="son">Son</option>
+															<option value="daughter">Daughter</option>
+															<option value="stepchild">Stepchild</option>
+															<option value="halfBrother">Half Brother</option>
+															<option value="halfSister">Half Sister</option>
+															<option value="stepBrother">Step Brother</option>
+															<option value="stepSister">Step Sister</option>
+															<option value="fosterChild">Foster Child</option>
+															<option value="nephew">Nephew</option>
+															<option value="niece">Niece</option>
+															<option value="grandchild">Grand Child</option>
+															<option value="grandparent">Grand Parent</option>
+															<option value="parent">Parent</option>
+															<option value="brother">Brother</option>
+															<option value="sister">Sister</option>
+															<option value="aunt">Aunt</option>
+															<option value="uncle">Uncle</option>
+															<option value="none">None</option>
+															<option value="other">Other</option>
+														</select>
+													</div>
+													<div class="col-md-3">
+														<input class="col-md-2 text-center" type="text" placeholder="Mo"  >
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text">
+														<input class="col-md-2 text-center" type="text" placeholder="St" >
+													</div>
+												</div>
+												
+											
+											<!-- End the dependents -->
+											
 											</div>
+
 										</div>
 									</div>
 								</form>
@@ -623,6 +804,61 @@
 					</ul>
 				</nav>
 			</aside>
+			<!-- end of new taxpayer -->
+			<!-- other panel window start -->
+			<section class="panelWindow boxShadow">
+				<div class="panelTopBar">
+					<div class="ptaxType">
+						<span class="pcurType">1040</span>&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-down"></i>
+						<ul class="ptaxTypes" id="ptaxTypes" >
+							<li>1040</li>
+							<li>1040A</li>
+							<li>1040EZ</li>
+							<li>1040PR</li>
+							<li>1040NR</li>
+							<li>1040NREZ</li>
+						</ul>
+					</div>
+					<div class="panelHeaderContent text-white">
+						<span class="tpNamepart">Add Forms/Schedules</span>
+						<span class="text-lightBlue text-light">
+							
+						</span>
+					</div>
+					<ul class="panelOperators">
+						<li class="panelFormS"><i class="fa fa-file-text"></i></li>
+						<li class="panelMoney"><i class="fa fa-dollar"></i></li>
+						<li class="panelHeight"><i class="fa fa-chevron-up"></i></li>
+						<li class="panelWidth "><i class="fa fa-chevron-right"></i></li>
+						<li class="panelClose "><i class="fa fa-close"></i></li>
+					</ul>
+				</div>
+				<div class="panelHeader">
+					<h2 class="text-white text-light">
+						<span class="tpNamepart">Add Forms/Schedules</span>
+						<small class="text-lightBlue text-light">
+							Select forms or schedules to add 				
+						</small>
+					</h2>
+					<nav>
+						<ul class="text-lightBlue text-light">
+							<li>
+								<a href=""><i class="fa fa-file-text"></i>Forms</a>							
+							</li>
+							<li>
+								<a href="" data-toggle="tooltip" data-placement="right" title="Choose options"><i class="fa fa-print"></i> Schedules</a>							
+							</li>							
+							
+							
+						</ul>
+					</nav>
+				</div>
+				<div class="panelBody">
+					
+						
+				</div>
+			</section>	
+
 		</div>
 		</div> <!-- end #smBody for navigation -->
 
