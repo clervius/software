@@ -1,0 +1,355 @@
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Software Test</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="css/bootstrap.css"> 
+		<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" />
+		<link rel="stylesheet" href="css/typography.css" />
+		<link rel="stylesheet" href="css/teststyle.css" />
+
+
+		<script src="https://use.typekit.net/peh7god.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	</head>
+
+	<body id="applicationBody">
+		<header class="smHead">
+			<a href="" class="smHeaderLogo">Software</a>
+			<div class="smHeader">
+				<!-- center div, maybe for quick lookup 
+				<div></div>-->
+
+				
+
+				<!-- User information -->
+				<div class="smUser dropdown smUserchild">
+					<ul class="smUserName">
+						<li><a class="userMenu">Joram Clervius</a></li>
+						<li><a href="">Logout</a></li>
+					</ul>
+					<a  class="smUserImg userMenu dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="false" data-target="#smUserDD">
+						<img src="img/pDos.jpg">
+					</a>
+					<div class="smUserDD boxShadow text-light dropdown-menu" role="menu" aria-labelledby="smUserDD">
+						<ul>
+							<li><a href="" ><i class="fa fa-user"></i> Profile Settings</a></li>
+							<li><a href="" ><i class="fa fa-key"></i> Authorize</a></li>
+							<li><a href=""><i class="fa fa-building"></i> Entity Settings</a></li>
+						</ul>
+						<ul>
+							<li><a href=""><i class="fa fa-sign-out"></i> Logout</a></li>
+						</ul>						
+					</div>
+				</div>
+
+				<!-- menu items, like help -->
+				<div class="smUserchild">
+					<ul class="smHeaderMenu">
+						<li><a href=""><i class="fa fa-video-camera"></i> Live Help</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<nav class="smNavigation">
+			<div class="smNavTaxType">
+				<span class="taxType">1040 Returns</span>
+				<ul class="choosetaxType">
+					<li><a>1040 Returns</a></li>
+					<li><a>Business Returns</a></li>
+				</ul>
+			</div>
+			<ul class="smBodyNav">
+				<li><a href=""><i class="fa fa-database"></i> Database</a></li>
+				<li><a href=""><i class="fa fa-gear"></i> Setup</a></li>
+				<li><a href=""><i class="fa fa-pie-chart"></i> Utility</a></li>
+				<li><a href=""><i class="fa fa-file-text-o"></i> Reports</a></li>
+				<li><a href=""><i class="fa fa-list-alt"></i> Commands</a></li>
+				<li><a href=""><i class="fa fa-phone-square"></i> Help</a></li>
+			</ul>
+		</nav>
+		<div id="smBody">
+			<div class="smBody">
+			<!-- Dashboard -->
+				<section class="dashWindow">
+					<!-- Dashboard boxes -->
+					<div class="dashboardContainer clearfix">
+						<div class="dashLongLeft">
+							<div class="dashItem boxShadow" id="dashRecentItems">
+								<header>
+									<h3>
+										Recent Files
+										<small>To Be Transmitted</small>
+									</h3>
+								</header>
+								<ul>
+									<li><a href="">John Doe</a></li>
+									<li><a href="">Jane Doe</a></li>
+									<li><a href="">Joram Clervius</a></li>
+									<li><a href="">Trecia Lewis</a></li>
+									<li><a href="">Gary McLean</a></li>
+									<li><a href="">John Petit Dos</a></li>
+									<li><a href="">Steven Archer</a></li>
+									<li><a href="">Jannice Davis</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="dashBody">
+							<div id="dashSearch" class="boxShadow dashItem">
+								<form>
+									<input data-list=".dashResults" id="tpLookup" type="search" class="form-control" placeholder="&#xf002; Search by SSN, Name, etc...">
+									<input type="submit" value="search">
+								</form>
+							</div>
+
+							<div id="dashInformation" class="dashItem">
+								<ul>
+									<li>
+										<span class="dashInfoNumber">271</span>
+										<span class="dashInfoTitle">Total Returns</span>
+									</li>
+									<li>
+										<span class="dashInfoNumber">159</span>
+										<span class="dashInfoTitle">Accepted</span>
+									</li>
+								</ul>
+							</div>
+
+							<div id="dashNews" class="boxShadow">
+								<header>
+									<h3>
+										Recent Updates
+										<small>Industry News & Updates</small>
+									</h3>
+								</header>
+								<ul>
+									<li><a href="">IRS determined to be Nation's most incompetent</a></li>
+									<li><a href="">All 2016 Taxes filed in the state of Washington Must... </a></li>
+									<li><a href="">Dependents credit to change in the year 2017</a></li>
+								</ul>
+							</div>
+
+							<div class="dashButtons">
+								<button class="boxShadow"><i class="fa fa-send"></i> Transmit</button>
+								<button class="boxShadow" id="newTax"><i class="fa fa-user-plus"></i> New</button>
+								<div class="clearfix" id="newTaxStart">
+									<form>
+										<input type="text" placeholder="Enter SSN" class="newTaxSSN" id="newTaxSSN">
+										<input type="text" placeholder="Confirm SSN" class="newTaxSSN" id="confirmnewTaxSSN">
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Dashboard taxpayers -->
+					<div class="dashResultsCt">
+						<ul class="dashResults">
+							<li class="clearfix dashResultsTl">
+								<span class="drSSN col-xs-3">SSN</span>
+								<span class="drStatus col-xs-1">Status</span>
+								<span class="drtP col-xs-3">Taxpayer</span>
+								<span class="drCreated col-xs-2">Created</span>
+								<span class="drStatus col-xs-3">Status</span>
+							</li>
+							<!-- Single result -->
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">591-77-5063</span>
+									<span class="drStatus col-xs-1">S</span>
+									<span class="drtP col-xs-3">Joram Clervius</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Check Ready</span>
+								</a>
+							</li>
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">591-77-5063</span>
+									<span class="drStatus col-xs-1">S</span>
+									<span class="drtP col-xs-3">John Petit Dos</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Check Ready</span>
+								</a>
+							</li>
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">591-77-5063</span>
+									<span class="drStatus col-xs-1">S</span>
+									<span class="drtP col-xs-3">Trecia Lewis</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Check Ready</span>
+								</a>
+							</li>
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">591-77-5063</span>
+									<span class="drStatus col-xs-1">MFJ</span>
+									<span class="drtP col-xs-3">Josie Petit Dos</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Check Ready</span>
+								</a>
+							</li>
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">591-77-5063</span>
+									<span class="drStatus col-xs-1">HOH</span>
+									<span class="drtP col-xs-3">Jannice Davis</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Check Ready</span>
+								</a>
+							</li>
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">591-77-5063</span>
+									<span class="drStatus col-xs-1">S</span>
+									<span class="drtP col-xs-3">Steven Archer</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Check Ready</span>
+								</a>
+							</li>
+							<!-- Single result -->
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">400-00-1032</span>
+									<span class="drStatus col-xs-1">MFJ</span>
+									<span class="drtP col-xs-3">Jeff Smith</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Check Ready</span>
+								</a>
+							</li>
+							<!-- Single result -->
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">411-00-0115</span>
+									<span class="drStatus col-xs-1">MFJ</span>
+									<span class="drtP col-xs-3">Felix Oscarson</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Refused by CS</span>
+								</a>
+							</li>
+							<!-- Single result -->
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">411-00-0121</span>
+									<span class="drStatus col-xs-1">S</span>
+									<span class="drtP col-xs-3">Brian Carlson</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Acknowledged</span>
+								</a>
+							</li>
+							<!-- Single result -->
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">411-00-3001</span>
+									<span class="drStatus col-xs-1">HOH</span>
+									<span class="drtP col-xs-3">Javier Whitford</span>
+									<span class="drCreated col-xs-2">04-08-2015</span>
+									<span class="drStatus col-xs-3">Proforma</span>
+								</a>
+							</li>
+							<!-- Single result -->
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">411-00-3002</span>
+									<span class="drStatus col-xs-1">HOH</span>
+									<span class="drtP col-xs-3">Marvin Martin</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Acknowledged</span>
+								</a>
+							</li>
+							<!-- Single result -->
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">411-00-3003</span>
+									<span class="drStatus col-xs-1">S</span>
+									<span class="drtP col-xs-3">Juan Rodriguez</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Acknowledged</span>
+								</a>
+							</li>
+							<!-- Single result -->
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">411-00-3004</span>
+									<span class="drStatus col-xs-1">HOH</span>
+									<span class="drtP col-xs-3">Michael Michaelson</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Acknowledged</span>
+								</a>
+							</li>
+							<!-- Single result -->
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">411-00-3005</span>
+									<span class="drStatus col-xs-1">S</span>
+									<span class="drtP col-xs-3">Brian Gonzalez</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Acknowledged</span>
+								</a>
+							</li>
+							<!-- Single result -->
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">411-00-3006</span>
+									<span class="drStatus col-xs-1">S</span>
+									<span class="drtP col-xs-3">Sadie Johnson</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Acknowledged</span>
+								</a>
+							</li>
+							<!-- Single result -->
+							<li class="clearfix">
+								<a href="" title="">
+									<span class="drSSN col-xs-3">411-00-3007</span>
+									<span class="drStatus col-xs-1">MFJ</span>
+									<span class="drtP col-xs-3">Pablo Borges</span>
+									<span class="drCreated col-xs-2">04/09/2015</span>
+									<span class="drStatus col-xs-3">Acknowledged</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</section>
+			<!-- end dashboard -->
+
+			<!-- area to test new panels -->
+			
+			<!-- end of new panel tests -->
+				
+				
+
+			</div>
+		</div> <!-- end #smBody for navigation -->
+		<!-- Add modals here -->
+		<div class="modal fade adventModal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+			 	<div class="modal-content">
+				    <div class="modal-header">
+				    	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">Delete File</h4>
+				    </div>
+				   	<div class="modal-body">
+				       <p>Are you sure you would like to set this file for deletion?</p>
+				    </div>
+				    <div class="modal-footer">
+				    	<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				    	<button type="button" class="btn btn-primary">Delete</button>
+				    </div>
+				</div>
+			</div>
+		</div>
+		<!-- end of modals -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> 
+		<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="js/jquery.hideseek.js"></script>
+		<script src="js/js.js"></script>
+		<script src="js/newTaxPayer.js"></script>
+
+
+	</body>
+
+</html>

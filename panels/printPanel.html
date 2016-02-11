@@ -1,0 +1,298 @@
+<!-- Start of the Print Panel -->
+				<section class="panelWindow boxShadow secondWindow" id="printPanel">
+					<div class="panelTopBar">		
+						<div class="panelHeaderContent text-white">
+							<span class="tpNamepart">Print</span>
+							<span class="text-lightBlue text-light">
+								<span class="pSSN">Select Print Options</span> 
+							</span>
+						</div>			
+						<ul class="panelOperators">					
+							<li class="panelHeight"><i class="fa fa-chevron-up"></i></li>	
+							<li class="panelWidth "><i class="fa fa-chevron-right"></i></li>
+							<li class="panelClose "><i class="fa fa-close"></i></li>
+						</ul>
+					</div>
+					<div class="panelHeader">
+						<h2 class="text-white text-light">
+							<span class="tpNamepart">Print</span>
+							<small class="text-lightBlue text-light">
+								<span class="pSSN">Select Print Options</span>							
+							</small>
+						</h2>
+						<nav>
+							<ul class="text-lightBlue text-light">
+								<li>
+									<a href="panels/addForms.html" class="pheaderMenuItem"><i class="fa fa-copy"></i>Preview</a>							
+								</li>
+								<li>
+									<a href="panels/addForms.html" class="pheaderMenuItem"><i class="fa fa-pencil"></i>eSignature</a>							
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="panelBody">
+						<ul class="pBodyNav">
+							<li  role="presentation" class="active"><a data-target="#taxReturnPrintouts"  role="tab" data-toggle="tab">Tax Return</a></li>							
+							<li role="presentation"><a data-target="#otherFormPrintouts"  role="tab" data-toggle="tab">Other Forms</a></li>							
+						</ul>
+						<div class="pBodyWrapper">
+							<div class="tab-content">
+								<div class="printContent tab-pane active fade in" id="taxReturnPrintouts">
+									
+									<div class="panelCard clearfix">
+										<h5>Specific Form
+											<small>Select a specific form to print</small>
+										</h5>
+										<div class="formGroup clearfix">
+											<label class="col-md-3">Select Form:</label>
+											<select class="col-md-9" id="SpFrms">
+												<option value="nothing">Select form</option>
+												<option value="frm">FRM W-2</option>
+												<option value="frm">FRM 8867</option>
+												<option value="frm">Schedule EIC</option>
+											</select>
+										</div>
+										<div class="text-right" id="printSpFrms">
+											<button class="panelButton" ><i class="fa fa-print"></i>Print</button>
+										</div>
+									</div>
+
+									<div class="seperator"></div>
+
+									<div class="panelCard clearfix">
+										<h5>Tax Return
+											<small>Select options for Return Printout</small>
+										</h5>
+										<div class="col-md-4">
+											<h6>Select Components</h6>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Print Header Page</label>
+												<input type="checkbox" class="col-md-2">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Diagnostics</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Client Invoice</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Federal Client Letter</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">State Client Letters</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Tax Comparison</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Tax Summary</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">8879 Forms</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Bank App Forms</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Bank Fee Estimate</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Filing Options</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Federal Return</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">State Return(s)</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">City Return(s)</label>
+												<input type="checkbox" class="col-md-2">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Income Summary</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Federal Assets Lists</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">State Asset Lists</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Privacy Letter</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+											<!-- component -->
+											<div class="formGroup clearfix">
+												<label class="col-md-10">Consent Form</label>
+												<input type="checkbox" class="col-md-2" checked="checked">
+											</div>
+
+										</div>
+										<div class="col-md-8">
+											<h6>Review <small>Diagnostics</small></h6>
+											<div class="clearfix">
+												<ul class="prntReview">
+													<li class="prntRvwHead clearfix">
+														<span class="col-md-3">Form</span>
+														<span class="col-md-9">Error</span>
+													</li>
+													<li class="prntRvw clearfix">
+														<a href="">
+															<span class="col-md-3">Client Data</span>
+															<span class="col-md-9"><i class="fa fa-exclamation-circle"></i> Required Field Missing</span>
+														</a>
+													</li>
+													<li class="prntRvw clearfix">
+														<a href="">
+															<span class="col-md-3">BUS ACT Q</span>
+															<span class="col-md-9"><i class="fa fa-exclamation-circle"></i> Document all business activity income/exp/assets</span>
+														</a>
+													</li>
+													<li class="prntRvw clearfix">
+														<a href="">
+															<span class="col-md-3">RET 1040</span>
+															<span class="col-md-9"><i class="fa fa-exclamation-circle"></i> Missing selection for line 17</span>
+														</a>
+													</li>
+													<li class="prntRvw clearfix">
+														<a href="">
+															<span class="col-md-3">RET 1040</span>
+															<span class="col-md-9"><i class="fa fa-exclamation-circle"></i> Validation Check - Verify with taxpayer/spouse if</span>
+														</a>
+													</li>
+													<li class="prntRvw clearfix">
+														<a href="">
+															<span class="col-md-3">SCH C</span>
+															<span class="col-md-9"><i class="fa fa-exclamation-circle"></i> Invalid Entry</span>
+														</a>
+													</li>
+													<li class="prntRvw clearfix">
+														<a href="">
+															<span class="col-md-3">SCH C</span>
+															<span class="col-md-9"><i class="fa fa-exclamation-circle"></i> Required Field Missing</span>
+														</a>
+													</li>
+													<li class="prntRvw clearfix">
+														<a href="">
+															<span class="col-md-3">SCH C</span>
+															<span class="col-md-9"><i class="fa fa-exclamation-circle"></i> Business Code must be 6 Digits from NAICS List</span>
+														</a>
+													</li>
+													<li class="prntRvw clearfix">
+														<a href="">
+															<span class="col-md-3">FRM 8863</span>
+															<span class="col-md-9"><i class="fa fa-exclamation-circle"></i> Audit Flag - Complete Education Credit Questionnair</span>
+														</a>
+													</li>
+													<li class="prntRvw clearfix">
+														<a href="">
+															<span class="col-md-3">FRM 1099-G</span>
+															<span class="col-md-9"><i class="fa fa-exclamation-circle"></i> Required Field Missing</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+											<br>
+											<p>Once these errors have been cleared, you will be able to print out the tax return</p>
+										</div>
+									</div>
+								</div>
+								<div class="printContent tab-pane fade in" id="otherFormPrintouts">
+									<ul>
+										<li class="col-md-3">											
+												<i class="fa fa-file-text"></i>							
+												<span class="otherFileTl">Disclosure/Privacy</span>
+												<button class="panelButton">Print</button>
+											</span>
+										</li>
+										<li class="col-md-3">											
+												<i class="fa fa-file-text"></i>							
+												<span class="otherFileTl">Organizer/Proforma</span>
+												<button class="panelButton">Print</button>
+											</span>
+										</li>
+										<li class="col-md-3">											
+												<i class="fa fa-file-text"></i>							
+												<span class="otherFileTl">8879/8453 EF Docs</span>
+												<button class="panelButton">Print</button>
+											</span>
+										</li>
+										<li class="col-md-3">											
+												<i class="fa fa-file-text"></i>							
+												<span class="otherFileTl">Acknowledge Letter</span>
+												<button class="panelButton">Print</button>
+											</span>
+										</li>
+										<li class="col-md-3">											
+												<i class="fa fa-file-text"></i>							
+												<span class="otherFileTl">State Ack Letter</span>
+												<button class="panelButton">Print</button>
+											</span>
+										</li>
+										<li class="col-md-3">											
+												<i class="fa fa-file-text"></i>							
+												<span class="otherFileTl">Payment Voucher</span>
+												<button class="panelButton">Print</button>
+											</span>
+										</li>
+										<li class="col-md-3">											
+												<i class="fa fa-file-text"></i>							
+												<span class="otherFileTl">Extension Request</span>
+												<button class="panelButton">Print</button>
+											</span>
+										</li>
+										<li class="col-md-3">											
+												<i class="fa fa-file-text"></i>							
+												<span class="otherFileTl">Extension Ack Leter</span>
+												<button class="panelButton">Print</button>
+											</span>
+										</li>
+										<li class="col-md-3">											
+												<i class="fa fa-file-text"></i>							
+												<span class="otherFileTl">Referral Coupons</span>
+												<button class="panelButton">Print</button>
+											</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>	
+					</div>
+
+				</section>
+				<!-- End of Print Panel -->

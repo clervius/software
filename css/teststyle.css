@@ -17,6 +17,93 @@ a {transition: all 0.3s ease;}
 	clear:both;
 	width:90%;
 }
+/* Login Form styles */
+#loginBody {
+	background-image: url('../img/loginBG.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position:relative;
+}
+.advertLogin {
+	position:absolute;
+	float:left;
+	color:white;
+	font-weight:100;
+	font-size:80px;
+	
+}
+.advertLogin p {
+	width:80%;
+	margin:100px 0 0 50px;
+	 text-shadow: 2px 2px 5px #818181;
+}
+.loginForm {
+	float:right;
+	width:500px;
+	background-color: white;
+	border-left:1px solid black;
+	padding:200px 0 0 55px;
+	height:100%;
+}
+.loginForm img {
+	position:relative;
+	top:-100px;
+}
+.loginForm h1 {
+	font-size:30px;
+	font-weight: 100;
+	margin-bottom:50px;
+}
+.loginForm h1 small {
+	font-size: 14px;
+	display:block;
+	font-weight: 100;
+	margin-top:5px;
+
+}
+.loginFormItems {
+	font-weight: 100;
+}
+.loginFormItems form {}
+.loginFormItems form .formGroup {
+	margin-bottom: 10px !important;
+}
+.loginFormItems form .formGroup label {
+	font-weight: 100;
+	display:block;
+	text-align:left !important;
+	display:none;
+}
+.loginFormItems form .formGroup input {
+	padding:5px 15px;
+	border:none;
+	background-color: rgba(0,0,0,.08);
+	width:190px;
+	outline:none;
+}
+.loginFormItems form .formGroup input:focus {
+	background-color: #001325;
+	color:white;
+}
+.loginFormItems form input[type="submit"] {
+	border:none;
+	background-color: #001325;
+	color:white;
+	width:190px;
+	padding:5px 15px;
+}
+.loginFormItems form input[type="submit"]:hover {
+	cursor: pointer;
+	background-color: #8f061e;
+}
+/* End login form styles  */
+
+#applicationBody {
+	display:none;
+}
+
+
 .smHead {
 	display:block;
 	height:37px;
@@ -342,6 +429,49 @@ a {transition: all 0.3s ease;}
 .dashButtons button i {
 	display:block;
 }
+.dashResultsCt {
+	font-size:11px;
+	margin-top:50px;
+}
+.dashResultsCt .dashResultsTl {}
+.dashResultsCt .dashResultsTl li {}
+.dashResultsCt .dashResultsTl li span {
+	padding-left:;
+}
+.dashResultsCt li {
+	border-bottom:1px solid rgba(0,0,0,.1);
+}
+.dashResultsCt li span:first-child {
+	padding-left:0px !important;
+}
+.dashResultsCt li span:nth-child(2) {
+	position:relative;
+	left:-10px;
+}
+.dashResultsCt li span {
+	padding:2px 5px !important;
+}
+.dashResultsCt li span.drSSN {}
+.dashResultsCt li span.drStatus {}
+.dashResultsCt li span.drtP {}
+.dashResults li a {
+	color:rgba(0,0,0,.5);
+	white-space: nowrap
+}
+.dashResults li a span {
+	overflow: hidden;
+}
+.dashResults li:hover {
+	opacity:.8;
+}
+.dashResults li:nth-child(2n+2) {
+	background-color:rgba(0,0,0,.03);
+}
+.dashResults li:last-child {
+	border:none;
+}
+
+
 #newTaxStart {
 	width:48%;
 	float:right;
@@ -377,9 +507,11 @@ a {transition: all 0.3s ease;}
 	margin:0 0 0 50px;
 
 }
+.panelWindow.smpWindow {
+	width:550px !important;
+}
 .panelWindow .panelTopBar {
 	background-color: #001325;
-
 	height:21px;
 }
 .ptaxType {
@@ -476,19 +608,21 @@ a {transition: all 0.3s ease;}
 	text-align:center;
 	display:inline-block;
 }
-.panelHeader nav ul li a {
+
+.panelHeader nav ul li a, .panelHeader nav ul li .pheaderMenuSpan {
 	transition: all 0.3s ease;
 	background-color: rgba(255,255,255,.05);
 	padding:10px 10px 5px;
 	display:block;
 	border:2px solid rgba(255,255,255,.05);
 }
-.panelHeader nav ul li a:hover {
+.panelHeader nav ul li a:hover, .panelHeader nav ul li .pheaderMenuSpan:hover {
 	color:white;
 	text-decoration: none;
 	background-color: rgba(255,255,255,.09);
 	border-right:2px solid rgba(255,255,255,.1);
 	border-bottom:2px solid rgba(255,255,255,.1);
+	cursor:pointer;
 }
 .panelHeader nav ul li i {
 	display:block;
@@ -522,6 +656,7 @@ a {transition: all 0.3s ease;}
 .pBodyNav {
 	border-bottom:1px solid rgba(0,0,0,.08);
 	padding:8px 0 8px 15px;
+	position:relative;
 }
 .pBodyNav {
 	display:block;
@@ -551,8 +686,28 @@ a {transition: all 0.3s ease;}
 	text-decoration:none;
 }
 .pBodyWrapper {}
-.pBodyWrapper .smBodyTab {
+.pBodyWrapper .smBodyTab, .printContent {
 	margin-top:15px;
+}
+.modal.adventModal .modal-footer button.btn-default {
+	border:none;
+	color:black;
+	padding:5px 10px;
+	background-color: rgba(0,0,0,.3);
+	border-radius:3px;
+}
+.panelButton, .modal.adventModal .modal-footer button.btn-primary {
+	border:none;
+	color:white;
+	padding:5px 10px;
+	background-color: #001325;
+	border-radius:3px;
+}
+.panelButton:hover {
+	background-color:#8f061e
+}
+.panelButton i {
+	margin-right:5px;
 }
 .panelList {
 	margin-left:20px;
@@ -580,6 +735,12 @@ a {transition: all 0.3s ease;}
 	padding:0 15px 0 15px;
 	height:calc(100% - 47px );
 	overflow:auto;
+}
+.smsBodyWrapper {
+	padding:0 15px 0 15px;
+	height:calc(100% - 147px );
+	overflow:auto;
+	padding-top:15px;
 }
 .pBodyWrapper {
 	font-size:12px;
@@ -704,3 +865,201 @@ a {transition: all 0.3s ease;}
 .forSpouse, .forSpouse_ {
 	opacity: .3;
 }
+.pheaderSearchForm {
+	display:block;
+	margin-top:20px;
+	padding:15px 0 0 0;
+}
+.pheaderSearchForm label {}
+.pheaderSearchForm label input {
+	outline:none;
+	padding:5px 10px;
+	font-weight: 100;
+	border-radius:5px;
+	border:1px solid rgba(255,255,255,.3);
+	border-color: #a3c1c9;
+	background-color: rgba(255,255,255,.1);
+	color:white;
+	font-family: FontAwesome, "proxima-nova", "Montserrat", sans-serif;
+	width:280px;
+}
+.pheaderSearchForm label input[type='text']:focus {
+	background-color: transparent;
+}
+.pheaderSearchForm label input[type='text'] {}
+.pheaderSearchForm input[type='submit'] {
+	display:none;
+}
+.formsSchedsList {}
+.formsSchedsList li {
+	border-bottom:1px solid rgba(0,0,0,.1);
+	padding:10px 0;
+}
+.formsSchedsList li {}
+.formsSchedsList li:last-child {
+	border:none;
+}
+.formsSchedsList li:hover {
+	background-color:rgba(0,0,0,.03);
+}
+.formsSchedsList li.formListHeader {
+	font-weight:600;
+	border-bottom:1px solid rgba(0,0,0,.2);
+}
+.formsSchedsList li span {
+
+	}
+
+.formsSchedsList li span:first-child {
+	text-align:center;
+}
+.formsSchedsList li span:first-child i {
+	position:relative;
+	top:3px;
+}
+.formsSchedsList li span:nth-child(2) {
+	font-weight:400;
+
+}
+.formsSchedsList li span:last-child {}
+.formsSchedsList li span a:hover {
+	text-decoration:none;
+}
+.formsSchedsList li span a.addFormName {
+	color:#001325;
+}
+.formsSchedsList li span a.addFormLink {
+	padding:3px 15px;
+	color:white;
+	background-color: #001325;
+	border-radius:5px;
+	border:1px solid #001325;
+	font-weight:bold;
+}
+.formsSchedsList li span a.addFormLink:hover {
+	color:#001325;
+	border-color: #a3c1c9;
+	background-color: #a3c1c9;
+} 
+.formsContainer .pBodyNav {}
+.formsContainer .pBodyNav li {
+	position:relative !important;
+	left:-30px !important;
+}
+.no-results {
+	padding-left:20px !important;
+	color:rgba(0,0,0,.5);
+}
+
+.formHeaderExcerpts {
+	padding-top:10px;
+}
+.formHeaderExcerpts li {
+	text-align: left !important;
+	margin-right:25px;
+	padding:0 5px 0 20px;
+	border-left:1px solid rgba(255,255,255,.15);
+}
+.formHeaderExcerpts li:first-child {
+	border:none;
+	padding-left:0;
+}
+.formHeaderExcerpts li strong {
+	display:block;
+}
+.formHeaderExcerpts li span {
+	
+}
+.frm_sch {}
+.frm_sch .formBox {
+	border-top:1px solid rgba(0,0,0,.1);
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.frm_sch .formBox:first-child {
+}
+.formBox {
+}
+.formBox h6 {
+	margin-bottom: 5px;
+	font-size:10px !important;
+	display:block;
+}
+.formBox h6 .formBoxNo {
+	font-weight:400;
+	border-right:1px solid rgba(0,0,0,.2);
+	padding-right:5px;
+}
+.formBox h6 .formBoxTl {
+	font-weight:400;
+}
+.formBox .formGroup {}
+.formBox .formGroup input {
+	
+}
+#printSpFrms {
+	display:none;
+}
+.prntReview {}
+.prntReview li {}
+.prntReview li.prntRvwHead {
+	font-weight:400;
+	border-bottom:1px solid rgba(0,0,0,.2);
+}
+.prntReview li span {
+	white-space: nowrap;
+	overflow:hidden;
+}
+.prntReview li span:first-child {}
+.prntReview li span:last-child {}
+.prntRvw {
+	padding:3px 0;
+	border-bottom:1px solid rgba(0,0,0,.1);
+}
+.prntRvw:hover {
+	opacity: .8
+}
+.prntRvw a {
+	color:rgba(0,0,0,.8);
+}
+.prntRvw a i {
+	margin-right:5px;
+	opacity:.4;
+}
+.prntRvw:nth-child(2n+2) {
+	background-color: rgba(0,0,0,.03)
+}
+#otherFormPrintouts {}
+#otherFormPrintouts ul {}
+#otherFormPrintouts ul li {
+	margin-bottom:30px;
+}
+#otherFormPrintouts ul li i {
+	font-size:16px;
+	margin-right:5px;
+}
+#otherFormPrintouts ul li span {}
+#otherFormPrintouts ul li button {
+	margin-top:5px;
+}
+.modal.adventModal {}
+.modal.adventModal .modal-content {
+	border-radius:3px;
+}
+.modal.adventModal .modal-header {
+	background-color:#001325;
+}
+.modal.adventModal .modal-header .close {
+	color:white;
+}
+.modal.adventModal .modal-header h4 {
+	color:white;
+	font-weight:100;
+
+}
+.modal.adventModal .modal-header {}
+.modal.adventModal .modal-body {}
+.modal.adventModal .modal-footer {}
+.modal.adventModal .modal-footer button {}
+.modal.adventModal .modal-footer button.btn-default {}
+.modal.adventModal .modal-footer button.btn-primary {}

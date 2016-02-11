@@ -1,3 +1,10 @@
+$(document).on('click','#loginButton', function(e){
+	
+	console.log("trying to login")
+	window.location.href = "application.html";
+	return false;
+})
+
 //Change the type of tax that the system is set up for
 $(document).on('click', '.taxType', function(){
 	$(this).hide();
@@ -25,6 +32,12 @@ $(document).on('click', '.ptaxTypes li', function(){
 /* Functions for the top header portion of the panels */	
 	//Function to keep the panel body height consistent.
 	function panelBodyHeight(){
+		/*
+		var panelBody = $(document).find('.panelBody');
+		var panel = panelBody.each().parents('section.panelWindow');
+		var containerHeight = 
+		*/
+
 		var panelBody = $('.panelBody');
 		var panel = panelBody.parents('section.panelWindow');
 		var containerHeight = panel.parent().height();
@@ -43,11 +56,27 @@ $(document).on('click', '.ptaxTypes li', function(){
 					console.log("scrollbar Created")					
 				}
 			}});
-		 $('#smBody').mCustomScrollbar({axis: "x", theme: "minimal-dark", scrollInertia: 250, callbacks:{
+		 $('#smBody').mCustomScrollbar({
+		 	axis: "x", 
+		 	theme: "minimal-dark", 
+		 	scrollInertia: 250, 
+		 	mouseWheel: {
+		 		enable: false
+		 	},
+		 	callbacks:{
 		 	onCreate: function(){
 		 		console.log("horizontal Scrollbar created")
 		 	}
 		 }})
+
+		 	$(function () {$('[data-toggle="tooltip"]').tooltip();})
+			$(function () {$('.dobInput').datepicker({
+				changeMonth: true,
+				changeYear: true,
+				yearRange: "-100:+0"
+				});
+			})
+			$('.spouseInput, .spouseInput_').prop('disabled', true);
 	}	
 
 	// Function to toggle showing the Forms and schedules
@@ -57,16 +86,23 @@ $(document).on('click', '.ptaxTypes li', function(){
 		panelWindow.next('.panelList').fadeToggle(150);
 	})
 	// Function that closes the panels
-	$(document).on('click', '.panelClose', function(){
-		console.log("clicked to close panel");
+	$(document).on('click', '.panelClose', function(e){
+		console.log("clicked to close  forms panel");
 
 		var panelWindow = $(this).parents('section.panelWindow');
 		var listItems = panelWindow.next('.panelList');
+
 		panelWindow.animate({width: 0}, 70, function(){
 			panelWindow.remove();
 			listItems.remove();
 
-		});
+			if(e.hasOwnProperty('originalEvent')) {
+				$('#smBody').mCustomScrollbar("scrollTo", 50);
+			}else {
+				console.log('User did not ask to close panel, so we dont scroll')
+				// Do not scroll
+			}
+		});	
 	})
 	// Function to make panels wider
 	$(document).on('click', '.panelWidth', function(){
@@ -152,15 +188,14 @@ $(document).on('focus', '.pBodyWrapper input, .pBodyWrapper select', function(){
 
 //To be at the very end of the sheet - Calls & inits
 $(document).ready(function(){
+	$('#applicationBody').fadeIn(1700);
 	panelBodyHeight();
-	$(function () {$('[data-toggle="tooltip"]').tooltip();})
-	$(function () {$('.dobInput').datepicker({
-		changeMonth: true,
-		changeYear: true,
-		yearRange: "-100:+0"
-		});
-	})
-	$('.spouseInput, .spouseInput_').prop('disabled', true)
+	$('#tpLookup').hideseek({
+		highlight: true,
+		hidden_mode: true,
+		headers: '.dashResultsTl'
+	});
+	$('#tpFormTree').sortable();
 })
 $('.pBodyWrapper').hover(function(){
 	$('#smBody').mCustomScrollbar('disable')
