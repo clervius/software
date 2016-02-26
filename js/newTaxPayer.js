@@ -88,44 +88,96 @@ $(document).on('change', '#tpMarital', function(){
 
 	$(document).on('click', '#newTax', function(){
 		var SSN = ' ';
-		var $confirm = $('#confirmnewTaxSSN').val();
+		var confirm = $('#confirmnewTaxSSN').val();
+		var cfL = $('#confirmnewTaxSSN').val().length;
+
 		$(this).fadeOut(100, function(){
-			$('#newTaxStart').fadeIn(100);	
+			$('#newTaxStart').fadeIn(100, function(){
+				$('#newTaxSSN').focus();
+			});	
 		});
 
 		$('#confirmnewTaxSSN').keyup(function(){	
-			var SSN = $('#newTaxSSN').val();	 	
+			var SSN = $('#newTaxSSN').val();	
+			var ssnlength = SSN.length;		
 		 	//console.log("social is.. " +$(this).val() + " But the original is " + SSN);
 		 	if( $('#confirmnewTaxSSN').val() === SSN ){
 		 		$('#newTaxStart').fadeOut(100, function(){		 			
 		 			$('#newTaxSSN, #confirmnewTaxSSN').val('')
 		 			$('#newTax').fadeIn(200);
-
-		 			$.ajax({
-		 				url: "panels/newTaxpayer.html",
-		 				dataType: 'html',
-		 				success: function(data){
-		 					$('.smBody').append(data);
-		 					$('.pSSN').html(SSN);
-		 					$('#tpSSN').val(SSN);
-		 					panelBodyHeight();
-		 					$('#tpFormTree').sortable();
-		 					var dashWindow = $('.dashWindow').width();
-							var number = dashWindow +  50;
-							$('#smBody').mCustomScrollbar("scrollTo", number);
-		 				}
-
-		 			})
-
+		 			$('#newTpModal').modal();		 			
+		 			$('#ntpmSSN').val(SSN);
+		 			$('#ntpmSSN').css('background-color', 'transparent');
+		 			$('#ntpmSSN').css('border-bottom','1px solid rgba(0,0,0,.2)')
+		 			$('#ntpmSSN').css('color', 'black');
 		 		})
-		 	}/* else if( $confirm.length > 8) {
-		 		console.log("you entered the wrong social")
-		 		$('#incorrectSSNModal').modal();
-		 	}*/
+		 	}else if( $(this).val().length > 10 && $('#confirmnewTaxSSN').val() != SSN){
+		 		console.log("you entered the wrong social");
+		 		$('#wrongSSNModal').modal();
+		 		$('#newTaxSSN, #confirmnewTaxSSN').val('');
+		 		//$('#incorrectSSNModal').modal();
+		 	}else {
+		 		//console.log("you entered the wrong social")
+		 	}
 		 })
-
 	})
 
+	$(document).on('keyup', '#newTaxSSN', function(){
+		if($(this).val().length > 10){
+			$('#confirmnewTaxSSN').focus();
+
+		}else{
+			// Do nothing
+		}
+	})
+	/*
+	$(document).on('click', '#trySSNagain', function(){
+		$('#newTaxSSN').focus();
+	})*/
+	$(document).on('click','#ntpmCreate', function(){
+		var fileType = $('#ntpmType').val();
+		var SSN = $('#ntpmSSN').val();
+		var fName = $('#ntpmFname').val();
+		var mName = $('#ntpmMname').val();
+		var lName = $('#ntpmLname').val();
+		$('#newTpModal').modal('hide');
+		//Load new taxpayer
+		$.ajax({
+		 	url: "panels/newTaxpayer.html",
+		 	dataType: 'html',
+		 	success: function(data){
+		 		$('.smBody').append(data);
+		 		$('.tpNamePart').html(fName + ' ' + lName);
+		 		$('.pcurType').html(fileType);
+		 		$('.pSSN').html(SSN);
+		 		$('#tpSSN').val(SSN);
+		 		$('#tpFname').val(fName);
+		 		$('#tpMI').val(mName);
+		 		$('#tpLname').val(lName);
+		 		$('#tpCareOf').val(fName + ' ' + lName);
+		 		$('#tpSSN, #tpFname, #tpLname, #tpCareOf').css('background-color', 'transparent');
+		 		$('#tpSSN, #tpFname, #tpLname, #tpCareOf').css('border-bottom','1px solid rgba(0,0,0,.2)')
+		 		$('#tpSSN, #tpFname, #tpLname, #tpCareOf').css('color', 'black');
+		 		panelBodyHeight();
+		 		$('#tpFormTree').sortable();
+		 		var dashWindow = $('.dashWindow').width();
+				var number = dashWindow +  55;
+				$('#smBody').mCustomScrollbar("scrollTo", number);
+		 	}
+		 })
+
+		$('#ntpmType').val("1040");
+		$('#ntpmSSN').val("");
+		$('#ntpmFname').val("");
+		$('#ntpmMname').val("");
+		$('#ntpmLname').val("");
+		$('#ntpmType, #ntpmFname, #ntpmMname, #ntpmLname').css('background-color', 'rgba(0,0,0,.08)');
+		$('#ntpmType, #ntpmFname, #ntpmMname, #ntpmLname').css('border-bottom','none');
+	})
+$(document).on('click', '#createTax', function(e){
+	e.preventDefault();
+	$('#ntpmCreate').click();
+})
 	//Pull in panel for the header menu items
 	/*$(document).on('click', '.pheaderMenuItem', function(e){
 		e.preventDefault();
@@ -242,20 +294,40 @@ $(document).on('click','.link2tpForm, .pheaderMenuItem', function(e){
 			$('#smBody').mCustomScrollbar("scrollTo", number);
 		}
 	}else{
-		console.log("the Url is blank")
-
+		console.log("the Url is blank");
 	}
-
 	
 })/*
 jQuery('body').bind('focusin focus', function(e){
 	e.preventDefault();
 })*/
 
-$(document).on('focusin focus', '.panelWindow input, .panelWindow select, .secondWindow input, .secondWindow select', function(){
+$(document).on('focusin focus', '.panelWindow input, .panelWindow select, .secondWindow input, .secondWindow select, #sendNewSMS', function(){
 	$('#smBody').mCustomScrollbar('disable');
 })
-$(document).on('blur', '.panelWindow input, .panelWindow select, .secondWindow input, .secondWindow select', function(){
+$(document).on('blur', '.panelWindow input, .panelWindow select, .secondWindow input, .secondWindow select, #sendNewSMS', function(){
 	$('#smBody').mCustomScrollbar("update")
 } )
 /* End current forms functions */
+
+// Functions for closing and saving the taxpayer info
+$(document).on('click', '#saveTPinfo', function(){
+	var closeButton = $('#newTaxPayerPanel').find('.panelClose');
+	closeButton.click();
+	$('#smBody').mCustomScrollbar("scrollTo",20);
+})
+// end taxpayer saving/closing functions
+
+//ACA scripts 
+$(document).on('change', 'input[name="ACAcoverage"]', function(){
+	var answer = $(this).val();
+	console.log(answer)
+	if(answer == 'yesaca'){
+		$('#noaca').hide();
+		$('#yesaca').slideDown();
+	}else{
+		$('#yesaca').hide();
+		$('#noaca').slideDown();
+	}
+})
+//End ACA Scripts

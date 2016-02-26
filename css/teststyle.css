@@ -119,9 +119,9 @@ a {transition: all 0.3s ease;}
 	background-image: url(../img/logo.png);
 	background-repeat: no-repeat;
 	color:transparent;
-	width:53px;height:18px;
+	width:100px;height:18px;
 	float:left;
-	margin:8px 0 0 45px;
+	margin:8px 0 0 20px;
 }
 .smHead .smHeader {
 	float:right;
@@ -670,6 +670,10 @@ a {transition: all 0.3s ease;}
 	padding:3px 5px;
 	border-radius:5px;
 }
+.pBodyNav li a i {
+	font-size: 11px;
+	margin-right:5px;
+}
 .pBodyNav li a:hover {
 	cursor:pointer;
 }
@@ -738,7 +742,7 @@ a {transition: all 0.3s ease;}
 }
 .smsBodyWrapper {
 	padding:0 15px 0 15px;
-	height:calc(100% - 147px );
+	height:calc(100% - 190px);
 	overflow:auto;
 	padding-top:15px;
 }
@@ -783,7 +787,7 @@ a {transition: all 0.3s ease;}
 	background-color: rgba(0,0,0,.02);
 	color:black;
 }
-.pBodyWrapper input, .pBodyWrapper select {
+.pBodyWrapper input, .pBodyWrapper select, .newTPModalBody input, .newTPModalBody select {
 	border:none;
 	outline:none;
 	background-color:rgba(0,0,0,.08);
@@ -792,7 +796,7 @@ a {transition: all 0.3s ease;}
 	color:black;
 }
 .pBodyWrapper input:hover {}
-.pBodyWrapper input:focus {
+.pBodyWrapper input:focus, .newTPModalBody input:focus {
 	background-color:#f6f5c1;
 }
 .pBodyWrapper ul.panelTabs {
@@ -1016,9 +1020,7 @@ a {transition: all 0.3s ease;}
 	padding:3px 0;
 	border-bottom:1px solid rgba(0,0,0,.1);
 }
-.prntRvw:hover {
-	opacity: .8
-}
+
 .prntRvw a {
 	color:rgba(0,0,0,.8);
 }
@@ -1028,6 +1030,13 @@ a {transition: all 0.3s ease;}
 }
 .prntRvw:nth-child(2n+2) {
 	background-color: rgba(0,0,0,.03)
+}
+.prntRvw:hover {
+	/*opacity: .8*/
+	background-color:#8f061e;
+}
+.prntRvw:hover a {
+	color:white;
 }
 #otherFormPrintouts {}
 #otherFormPrintouts ul {}
@@ -1063,3 +1072,109 @@ a {transition: all 0.3s ease;}
 .modal.adventModal .modal-footer button {}
 .modal.adventModal .modal-footer button.btn-default {}
 .modal.adventModal .modal-footer button.btn-primary {}
+
+.smsBodyWrapper {}
+.smsBodyWrapper blockquote {
+	margin:10px 0 15px;
+	width:100%;
+	padding:10px 10px;
+}
+.smsBodyWrapper blockquote p {
+	font-size:14px;
+}
+.smsBodyWrapper blockquote.blockquote-reverse p {
+	color:rgba(0,0,0,.5);
+}
+.smsBodyWrapper blockquote footer {
+	font-size:9px;
+	color:rgba(0,0,0,.3);
+}
+.smsBodyWrapper blockquote footer span {}
+.smsBodyWrapper blockquote footer span.smsDate {}
+.smsBodyWrapper blockquote footer span.smsTime {}
+.smsBodyWrapper blockquote footer span.telephoneNumber {}
+.smsBodyWrapper blockquote footer cite {}
+#sendNewSMS {}
+#sendNewSMS textarea {
+	display:block;
+	padding:10px;
+	height:100px;
+	outline:none;
+}
+.notesList {}
+.notesList li {
+	margin-bottom:15px;
+}
+.notesList li .notesMeta {
+	padding-top:20px;
+}
+.notesList li .notesMeta small {
+	font-size:11px;
+}
+.notesList li .notesMeta small span:first-child {
+	margin-top:5px;
+}
+.notesList li .notesMeta small span {
+	font-size:9px;
+	display:block;
+	color:#ccc;
+}
+.tab-pane p {
+	margin-bottom:10px;
+}
+.panelListItem {
+	margin-left:10px;
+	margin-bottom:10px;
+}
+.hoverCursor:hover {
+	cursor: pointer;
+}
+.tTip {
+	text-decoration: underline;
+	text-decoration-color: red;
+}
+.tTip:hover {
+	cursor: pointer;
+}
+.acaAdvice {
+	display:none;
+}
+
+.smClientDoxHeader {
+	font-size:16px;
+	color:rgba(0,0,0,.3);
+	margin-bottom:10px;
+}
+.smClientDoxHeader li {
+
+}
+.smClientDox {
+	margin-top:10px;
+}
+.smClientDox li {
+	padding:10px 0;
+	border-bottom:1px solid rgba(0,0,0,.05);
+}
+.smClientDox li span {}
+.smClientDox li span.clientDoxName i {
+	margin-right: 10px;
+}
+.smClientDox li span a {}
+.smClientDox li span a:hover, .smClientDoxHeader a:hover {
+	cursor: pointer;
+	text-decoration:none;
+	color:white;
+} 
+.smClientDox li span .panelButton {}
+.smClientDox li span.clientDoxBtns {
+	display:none;
+	transition: all 0.7s ease;
+}
+.smClientDox li:hover {
+	background-color: rgba(0,0,0,.02)
+}
+
+.smClientDox li:hover span.clientDoxBtns {
+	display:inherit;
+	transition: all 0.7s ease;
+}

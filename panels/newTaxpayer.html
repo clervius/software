@@ -1,4 +1,4 @@
-<section class="panelWindow boxShadow">
+<section class="panelWindow boxShadow" id="newTaxPayerPanel">
 				<div class="panelTopBar">
 					<div class="ptaxType">
 						<span class="pcurType">1040</span>&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-down"></i>
@@ -56,13 +56,19 @@
 								<a href="panels/sms.html" class="pheaderMenuItem" data-target="#smsPanel"><i class="fa fa-commenting"></i> SMS</a>				
 							</li>
 							<li>
-								<a href="" class="pheaderMenuItem"><i class="fa fa-sticky-note"></i> Notes</a>							
+								<a href="panels/notes.html" class="pheaderMenuItem"><i class="fa fa-sticky-note"></i> Notes</a>							
 							</li>
 							<li>
-								<a href="" class="pheaderMenuItem"><i class="fa fa-edit"></i> Review</a>							
+								<span data-toggle="modal" data-target="#diagnosticModal" class="pheaderMenuSpan">
+								  <i class="fa fa-edit"></i> Review
+								</span>														
 							</li>
 							<li>
-								<a href="" class="pheaderMenuItem"><i class="fa fa-sign-in"></i> Deposit</a>							
+								
+								<span data-toggle="modal" data-target="#saveTPinfoModal" class="pheaderMenuSpan">
+								  <i class="fa fa-sign-in"></i> Queue
+								</span> 
+								<!--<a href="" class="pheaderMenuItem"><i class="fa fa-sign-in"></i> Deposit</a>	-->				
 							</li>
 							<li class="phRefundAmt">
 								<span><strong class="text-lightBlue">Fed</strong>$8,345.00</span>
@@ -81,7 +87,7 @@
 						<li role="presentation"><a data-target="#sm8879"  role="tab" data-toggle="tab">8879</a></li>
 						<li role="presentation"><a data-target="#smIPP"  role="tab" data-toggle="tab">IPP</a></li>
 						<li role="presentation"><a data-target="#smBankApp" role="tab" data-toggle="tab">Bank App</a></li>
-						<li role="presentation" ><a data-target="#smClientDocs"  role="tab" data-toggle="tab">Client Docs</a></li>
+						<li role="presentation" ><a data-target="#smClientDocs"  role="tab" data-toggle="tab">Docs</a></li>
 					</ul>	
 					<div class="pBodyWrapper">				
 						<div  class="tab-content">
@@ -92,13 +98,26 @@
 										<div class="col-md-12 panelRow">											
 											
 											<div >
+												<div class="col-md-12">
+													<div class="formGroup clearfix col-md-6">
+														<label class="col-md-4">Status:</label>
+														<select class="col-md-8" id="tpMarital" name=""  title="Marital Status"  >
+															<option value="-"> Marital Status</option>
+															<option value="S">Single</option>
+															<option value="HOH">Head of Household</option>
+															<option value="MFJ">Married Filing Jointly</option>
+															<option value="MFS">Married Filing Separate</option>
+															<option value="QW">Qualifying Widow</option>
+														</select>
+													</div>	
+												</div>
 												<div class="col-md-6">
 
 													<div class="panelCard">
 														<h5>Taxpayer Information</h5>
 														<div class="formGroup clearfix">
 															<label class="col-md-3">SSN:</label>
-															<input class="col-md-9 ssnText" type="text" placeholder="SSN" id="tpSSN" name="" title="Social Security Number"  >
+															<input class="col-md-9 ssnText" type="text" placeholder="SSN" id="tpSSN" name="" title="Social Security Number"  disabled="disabled">
 														</div>
 
 														<div class="formGroup clearfix stackedInputs">
@@ -207,17 +226,7 @@
 													</div>
 													
 
-													<div class="formGroup clearfix">
-														<label class="col-md-4">Status:</label>
-														<select class="col-md-8" id="tpMarital" name=""  title="Marital Status"  >
-															<option value="-"> Marital Status</option>
-															<option value="S">Single</option>
-															<option value="HOH">Head of Household</option>
-															<option value="MFJ">Married Filing Jointly</option>
-															<option value="MFS">Married Filing Separate</option>
-															<option value="QW">Qualifying Widow</option>
-														</select>
-													</div>													
+																									
 
 													<div class="formGroup clearfix">
 														<label class="col-md-11">Lived together in 2015</label>
@@ -229,14 +238,14 @@
 														<h5>Spouse Information</h5>
 														<div class="formGroup clearfix">
 															<label class="col-md-3">SSN:</label>
-															<input class="col-md-9 ssnText spouseInput_" type="text" placeholder="SSN" id="tpSSN" name="" title="Social Security Number"  >
+															<input class="col-md-9 ssnText spouseInput_" type="text" placeholder="SSN" id="tpSPSSN" name="" title="Social Security Number"  >
 														</div>
 
 														<div class="formGroup clearfix stackedInputs">
 															<label class="col-md-3">Name:</label>
-															<input class="col-md-4 spouseInput_" type="text" placeholder="First Name" id="tpFname" name=""  title="First Name"  >
-															<input class="col-md-1 spouseInput_" type="text" placeholder="MI." id="tpMI" name=""  title="Middle Initial"  >
-															<input class="col-md-4 spouseInput_" type="text" placeholder="Last Name" id="tpLname" name=""  title="Last Name"  >
+															<input class="col-md-4 spouseInput_" type="text" placeholder="First Name" id="tpSPFname" name=""  title="First Name"  >
+															<input class="col-md-1 spouseInput_" type="text" placeholder="MI." id="tpSPMI" name=""  title="Middle Initial"  >
+															<input class="col-md-4 spouseInput_" type="text" placeholder="Last Name" id="tpSPLname" name=""  title="Last Name"  >
 														</div>
 														
 														<div class="formGroup clearfix">
@@ -619,6 +628,47 @@
 
 							<div  class="tab-pane fade in smBodyTab" id="smACA">
 								This is for the Obamacare
+								<form>
+									<div class="row">	
+										<div class="panelRow col-md-12">
+											<div class="panelCard">
+												<h5>Required Health Coverage Information</h5>
+												<fieldset>
+													<legend>Full Year Coverage</legend>
+													<div class="col-md-6">
+														<div class="formGroup clearfix">
+															<label class="col-md-11">YES:</label>
+															<input class="col-md-1" type="checkbox">	
+															<div class="seperator"></div>
+															<p>Check the "Full-year" coverage box on the following forms</p>
+															<ul class="panelList">
+																<li>Line 61, Form 1040</li>
+																<li>Line 38, Form 1040A</li>
+																<li>Line 11, Form 1040EZ</li>
+															</ul>
+															<p>If YES, and the coverage <strong>WAS NOT</strong> through the Marketplace (Also called the "Exchange"), <strong>STOP HERE.</strong>
+															<p>If YES, and the coverage <strong>WAS</strong> through the Marketplace (Also called the "Exchange"), complete the following:</p>
+															<ul class="panelList">
+																<li>- Dependent AGI information in the box below (if Applicable)</li>
+																<li>- <a href="">1095-A Health Insurance Marketplace Statement</a></li>
+																<li>- <a href="">8962 Premium Tax Credit (For special Circumstances)</a></li>
+															</ul>													
+														</div>
+													</div>
+													
+												</fieldset>
+												<fieldset>
+													<legend>Not Every mbr of household had coverage</legend>
+													<div class="formGroup clearfix">
+														<label class="col-md-11">YES:</label>
+														<input class="col-md-1" type="checkbox">	
+														<div class="seperator"></div>
+													</div>
+												</fieldset>
+											</div>
+										</div>
+									</div>
+								</form>
 							</div>
 
 							<div  class="tab-pane fade in smBodyTab" id="smTaxSummary">

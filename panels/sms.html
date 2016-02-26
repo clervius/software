@@ -1,5 +1,6 @@
 <!-- Start of the sms Panel -->
 <section class="panelWindow boxShadow secondWindow smpWindow" id="smsPanel">
+
 	<div class="panelTopBar">		
 		<div class="panelHeaderContent text-white">
 			<span class="tpNamepart">SMS</span>
@@ -12,6 +13,7 @@
 			<li class="panelClose "><i class="fa fa-close"></i></li>
 		</ul>
 	</div>
+
 	<div class="panelHeader">
 		<h2 class="text-white text-light">
 			<span class="tpNamepart">SMS Thread</span>
@@ -28,15 +30,20 @@
 			</ul>
 		</nav>
 	</div>
+
 	<div class="panelBody">
 		<ul class="pBodyNav">
-			<li ><a>Refresh</a></li>
+			<li ><a><i class="fa fa-refresh"></i>refresh</a></li>
 		</ul>
 		<div class="smsBodyWrapper">
 			<div class="col-md-12 clearfix">
 				<blockquote class="col-md-6">
 					<p>Hi, is there an update on my tax?</p>
-					<footer><cite>(954) 324-7726</cite></footer>
+					<footer>
+						<span class="smsDate">02/12/2016</span>
+						<span class="smsTime">12:41 PM</span>
+						<cite source="telephoneNumber">(954) 324-7726</cite>
+					</footer>
 				</blockquote>
 			</div>
 			
@@ -50,10 +57,42 @@
 			<div class="col-md-12 clearfix">
 				<blockquote class="col-md-6">
 					<p>Okay let me know when there's an update</p>
-					<footer><cite>(954) 324-7726</cite></footer>
+					<footer>
+						<span class="smsDate">02/12/2016</span>
+						<span class="smsTime">12:41 PM</span>
+						<cite source="telephoneNumber">(954) 324-7726</cite>
+					</footer>
 				</blockquote>
 			</div>
 			
+			<div class="col-md-12 clearfix">
+				<blockquote class="col-md-6">
+					<p>Hi, is there an update on my tax?</p>
+					<footer>
+						<span class="smsDate">02/12/2016</span>
+						<span class="smsTime">12:41 PM</span>
+						<cite source="telephoneNumber">(954) 324-7726</cite>
+					</footer>
+				</blockquote>
+			</div>
+			
+			<div class="col-md-12 clearfix ">
+				<blockquote class="col-md-6 col-md-offset-6 blockquote-reverse clearfix">
+					<p>Everything has been submitted, waiting for word from the IRS now.</p>
+					<footer><cite>Me</cite></footer>
+				</blockquote>
+			</div>
+
+			<div class="col-md-12 clearfix">
+				<blockquote class="col-md-6">
+					<p>Okay let me know when there's an update</p>
+					<footer>
+						<span class="smsDate">02/12/2016</span>
+						<span class="smsTime">12:41 PM</span>
+						<cite source="telephoneNumber">(954) 324-7726</cite>
+					</footer>
+				</blockquote>
+			</div>
 			<div class="col-md-12 clearfix ">
 				<blockquote class="col-md-6 col-md-offset-6 blockquote-reverse clearfix">
 					<p>I will</p>
@@ -66,8 +105,11 @@
 					<footer><cite>Me</cite></footer>
 				</blockquote>
 			</div>
-		<div class="col-md-12">
-			<form>
+
+		
+	</div>
+	<div class="col-md-12">
+			<form id="sendNewSMS">
 				<div class="formGroup clearfix">
 					<textarea class="col-md-12"></textarea>
 				</div>
@@ -76,6 +118,5 @@
 				</div>
 			</form>
 		</div>
-	</div>
 </section>
 <!-- End of SMS Panel -->

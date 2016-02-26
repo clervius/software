@@ -51,7 +51,7 @@ $(document).on('click', '.ptaxTypes li', function(){
 		//$('.smBody').height($('.smBody').height() - 5)
 		panelBody.height(containerHeight - header - topBar - 18);
 		
-		 $('.pBodyWrapper').mCustomScrollbar({theme: "minimal-dark", scrollInertia: 250, callbacks:{
+		 $('.pBodyWrapper, .smsBodyWrapper').mCustomScrollbar({theme: "minimal-dark", scrollInertia: 250, callbacks:{
 				onCreate: function(){
 					console.log("scrollbar Created")					
 				}
@@ -91,17 +91,31 @@ $(document).on('click', '.ptaxTypes li', function(){
 
 		var panelWindow = $(this).parents('section.panelWindow');
 		var listItems = panelWindow.next('.panelList');
+		var panelWidth = panelWindow.width();
 
 		panelWindow.animate({width: 0}, 70, function(){
 			panelWindow.remove();
 			listItems.remove();
 
+		if ( panelWindow.hasClass('secondWindow') ){
+
 			if(e.hasOwnProperty('originalEvent')) {
-				$('#smBody').mCustomScrollbar("scrollTo", 50);
+				$('#smBody').mCustomScrollbar("scrollTo", 490 );
 			}else {
 				console.log('User did not ask to close panel, so we dont scroll')
 				// Do not scroll
 			}
+		}else{
+			if(e.hasOwnProperty('originalEvent')) {
+				$('#smBody').mCustomScrollbar("scrollTo", 20 );
+			}else {
+				console.log('User did not ask to close panel, so we dont scroll')
+				// Do not scroll
+			}
+		}
+
+		
+			
 		});	
 	})
 	// Function to make panels wider
@@ -166,7 +180,7 @@ $(document).on('click', '.ptaxTypes li', function(){
 /* End of the top header functions */
 
 // UX function - make the empty inputs gray, filled ones white, and focused ones dark.
-$(document).on('blur', '.pBodyWrapper input, .pBodyWrapper select', function(){
+$(document).on('blur', '.pBodyWrapper input, .pBodyWrapper select, .newTPModalBody input, .newTPModalBody select', function(){
 	console.log("you left that input")
 	if( $(this).val() === '' ) {
 		$(this).css('background-color', 'rgba(0,0,0,.08)');
@@ -177,13 +191,18 @@ $(document).on('blur', '.pBodyWrapper input, .pBodyWrapper select', function(){
 		$(this).css('color', 'black')
 	}
 });
-$(document).on('focus', '.pBodyWrapper input, .pBodyWrapper select', function(){
+$(document).on('focus', '.pBodyWrapper input, .pBodyWrapper select, .newTPModalBody input, .newTPModalBody select', function(){
 	$(this).css('background-color', '#001325');
 	$(this).css('color', 'white');
 	$(this).attr('autocomplete', 'off')
 })
 
-
+$(document).on('keypress','.panelBody input, .panelBody select, .panelBody textarea', function(e){
+	if (e.which === 13) {
+		e.preventDefault();
+		$(this).next('.panelBody input, .panelBody select, .panelBody textarea').focus();
+	}
+})
 
 
 //To be at the very end of the sheet - Calls & inits
@@ -192,10 +211,13 @@ $(document).ready(function(){
 	panelBodyHeight();
 	$('#tpLookup').hideseek({
 		highlight: true,
-		hidden_mode: true,
 		headers: '.dashResultsTl'
 	});
-	$('#tpFormTree').sortable();
+	$('#tpFormTree, .smClientDox').sortable();
+
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
 })
 $('.pBodyWrapper').hover(function(){
 	$('#smBody').mCustomScrollbar('disable')
